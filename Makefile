@@ -1,9 +1,8 @@
 board=nice_nano
-shield=cradioz
+shield=cradio
 zmk_app=${HOME}/code/zmk/app
 zmk_config=${HOME}/zmk-config
 build=${zmk_config}/.build
-deps=${zmk_config}/.deps
 bootloader=/media/${USER}/NICENANO
 
 define do_build
@@ -20,12 +19,7 @@ define do_flash
 	cp -av "${build}/${shield}_$(1)/zephyr/zmk.uf2" "${bootloader}/"
 endef
 
-.PHONY: deps build flash clean
-
-deps:
-	git clone --depth=1 https://github.com/davidphilipbarr/zmk-shields.git ${deps}/
-	mkdir -pv config/boards/shields/
-	ln -srvfn ${deps}/cradioz config/boards/shields/
+.PHONY: build flash clean
 
 build:
 	$(call do_build,left)
@@ -38,4 +32,4 @@ flash-right:
 	$(call do_flash,right)
 
 clean:
-	rm -rf ${build} ${deps} ./config/boards
+	rm -rf ${build}
