@@ -2,9 +2,7 @@
 
 Personal ZMK keymap for my 34-key [Hypergolic][1] wireless keyboard:
 
-![Hypergolic wireless split keyboard](data/hypergolic-top.png)
-
-![Hypergolic wireless split keyboard](data/hypergolic-side.png)
+![Hypergolic wireless split keyboard](data/hypergolic.jpg)
 
 ## Keyboard
 
