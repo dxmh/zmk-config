@@ -136,4 +136,41 @@ combos {
     key-positions = <32 17>;
   };
 
+  // Common patterns
+
+  combo_double_dash {
+    bindings = <&macro_double_dash>;
+    key-positions = <31 11 12>;
+  };
+
+  combo_double_ampersand {
+    bindings = <&macro_double_ampersand>;
+    key-positions = <32 28 29>;
+  };
+
+  combo_brackets {
+    bindings = <&macro_brackets>;
+    key-positions = <32 7 8>;
+  };
+
+  combo_code_fence {
+    bindings = <&macro_code_fence>;
+    key-positions = <31 12 13>;
+  };
+
+  combo_double_pipe {
+    bindings = <&macro_double_pipe>;
+    key-positions = <31 21 22>;
+  };
+
+  combo_parentheses {
+    bindings = <&macro_parentheses>;
+    key-positions = <31 1 2>;
+  };
+
+  combo_shell_command {
+    bindings = <&macro_shell_command>;
+    key-positions = <31 1 2 3>;
+  };
+
 };

@@ -1,0 +1,48 @@
+macro_double_dash: macro_double_dash {
+  compatible = "zmk,behavior-macro";
+  label = "macro_double_dash";
+  #binding-cells = <0>;
+  bindings = <&kp MINUS>, <&kp MINUS>;
+};
+
+macro_double_ampersand: macro_double_ampersand {
+  compatible = "zmk,behavior-macro";
+  label = "macro_double_ampersand";
+  #binding-cells = <0>;
+  bindings = <&kp AMPERSAND>, <&kp AMPERSAND>;
+};
+
+macro_brackets: macro_brackets {
+  compatible = "zmk,behavior-macro";
+  label = "macro_brackets";
+  #binding-cells = <0>;
+  bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT>;
+};
+
+macro_code_fence: macro_code_fence {
+  compatible = "zmk,behavior-macro";
+  label = "macro_code_fence";
+  #binding-cells = <0>;
+  bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
+};
+
+macro_double_pipe: macro_double_pipe {
+  compatible = "zmk,behavior-macro";
+  label = "macro_double_pipe";
+  #binding-cells = <0>;
+  bindings = <&kp PIPE>, <&kp PIPE>, <&kp LEFT>;
+};
+
+macro_parentheses: macro_parentheses {
+  compatible = "zmk,behavior-macro";
+  label = "macro_parentheses";
+  #binding-cells = <0>;
+  bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT>;
+};
+
+macro_shell_command: macro_shell_command {
+  compatible = "zmk,behavior-macro";
+  label = "macro_shell_command";
+  #binding-cells = <0>;
+  bindings = <&kp DOLLAR>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT>;
+};
