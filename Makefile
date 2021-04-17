@@ -1,49 +1,47 @@
 board=nice_nano
 shield=cradio
-zmk_config=${HOME}/zmk-config
-zmk=${zmk_config}/zmk
 zmk_image=zmkfirmware/zmk-dev-arm:2.4
-build=${zmk}/build
+zmk=${PWD}/zmk
+uf2=${PWD}/uf2
 bootloader=/media/${USER}/NICENANO
 
-define do_build
-	mkdir -pv "${build}/${shield}_$(1)"
-	cd "${zmk}/app" && \
-		west build --pristine -d "${build}/${shield}_$(1)" -b "${board}" \
-			-- -DSHIELD="${shield}_$(1)" -DZMK_CONFIG="${zmk_config}/config"
+define build
+	docker run --rm \
+		-v "${zmk}:/zmk" -v "${PWD}/config:/zmk-config" -v "${uf2}:/uf2" \
+		-w /zmk/app "${zmk_image}" sh -c '\
+			west build --pristine -b "${board}" \
+			-- -DSHIELD="$(1)" -DZMK_CONFIG="/zmk-config" \
+			&& cp build/zephyr/zmk.uf2 /uf2/$(1).uf2'
 endef
 
-define do_flash
-	@ printf "\nWaiting for $(1) ${board} bootloader to appear at ${bootloader} ."
+define flash
+	@ printf "\nWaiting for $(1) ${board} to appear at ${bootloader} ."
 	@ while [ ! -f "${bootloader}/current.uf2" ]; do sleep 1; printf "."; done
 	@ printf "\n";
-	cp -av "${build}/${shield}_$(1)/zephyr/zmk.uf2" "${bootloader}/"
+	cp -av "${uf2}/$(1).uf2" "${bootloader}/"
 endef
 
-.PHONY: build flash clean
+.PHONY: uf2 clean
 
 zmk:
-	# Get ZMK codebase:
-	git clone https://github.com/zmkfirmware/zmk ${zmk}
-	# Apply patches:
-	git -C ${zmk} remote add -ft macros okke-formsa https://github.com/okke-formsma/zmk
-	git -C ${zmk} remote add -ft cradio-v2 davidphilipbarr https://github.com/davidphilipbarr/zmk
-	git -C ${zmk} merge davidphilipbarr/cradio-v2 --no-edit --no-gpg-sign
-	git -C ${zmk} merge okke-formsa/macros --no-edit --no-gpg-sign
-	# Set up workspace:
-	docker run --rm --userns=host --user=$(shell id -u) \
-		--workdir="/zmk" --volume="${zmk}:/zmk" "${zmk_image}" \
-		sh -c 'west init -l app; west update'
+	docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" "${zmk_image}" sh -c '\
+		git clone https://github.com/zmkfirmware/zmk .; \
+		git remote add -ft macros okke-formsa https://github.com/okke-formsma/zmk; \
+		git remote add -ft cradio-v2 davidphilipbarr https://github.com/davidphilipbarr/zmk; \
+		git merge okke-formsa/macros --no-edit; \
+		git merge davidphilipbarr/cradio-v2 --no-edit; \
+		west init -l app; \
+		west update;'
 
-build: zmk
-	$(call do_build,left)
-	$(call do_build,right)
+uf2: zmk
+	$(call build,${shield}_left)
+	$(call build,${shield}_right)
 
 flash-left:
-	$(call do_flash,left)
+	$(call flash,${shield}_left)
 
 flash-right:
-	$(call do_flash,right)
+	$(call flash,${shield}_right)
 
 clean:
-	rm -rf ${build} ${zmk}
+	sudo rm -rf "${uf2}" "${zmk}"
