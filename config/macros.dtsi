@@ -9,7 +9,7 @@ macro_double_ampersand: macro_double_ampersand {
   compatible = "zmk,behavior-macro";
   label = "macro_double_ampersand";
   #binding-cells = <0>;
-  bindings = <&kp AMPERSAND>, <&kp AMPERSAND>;
+  bindings = <&kp AMPERSAND>, <&kp AMPERSAND>, <&kp SPACE>;
 };
 
 macro_brackets: macro_brackets {
@@ -30,7 +30,7 @@ macro_double_pipe: macro_double_pipe {
   compatible = "zmk,behavior-macro";
   label = "macro_double_pipe";
   #binding-cells = <0>;
-  bindings = <&kp PIPE>, <&kp PIPE>, <&kp LEFT>;
+  bindings = <&kp PIPE2>, <&kp PIPE2>, <&kp SPACE>;
 };
 
 macro_parentheses: macro_parentheses {

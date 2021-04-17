@@ -145,7 +145,7 @@ combos {
 
   combo_double_ampersand {
     bindings = <&macro_double_ampersand>;
-    key-positions = <32 28 29>;
+    key-positions = <32 27 28>;
   };
 
   combo_brackets {
