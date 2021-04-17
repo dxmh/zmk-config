@@ -22,6 +22,11 @@ combos {
     key-positions = <31 32>;
   };
 
+  combo_capslock {
+    bindings = <&kp CAPSLOCK>;
+    key-positions = <11 18>;
+  };
+
   // Symbols; left hand
 
   combo_at {
