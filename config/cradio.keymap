@@ -5,13 +5,13 @@
 
 &mt {
   flavor = "tap-preferred";
-  tapping_term_ms = <150>;
+  tapping_term_ms = <250>;
   quick_tap_ms = <0>;
 };
 
 &lt {
   flavor = "tap-preferred";
-  tapping_term_ms = <150>;
+  tapping_term_ms = <175>;
   quick_tap_ms = <0>;
 };
 
