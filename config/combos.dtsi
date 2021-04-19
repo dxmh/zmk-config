@@ -30,7 +30,7 @@ combos {
   // Symbols; left hand
 
   combo_at {
-    bindings = <&kp AT>;
+    bindings = <&kp DOUBLE_QUOTES>;
     key-positions = <31 10>;
   };
 
