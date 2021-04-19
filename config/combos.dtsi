@@ -30,12 +30,12 @@ combos {
   // Symbols; left hand
 
   combo_at {
-    bindings = <&kp DOUBLE_QUOTES>;
+    bindings = <&kp UK_AT_SIGN>;
     key-positions = <31 10>;
   };
 
   combo_backslash {
-    bindings = <&kp NON_US_BACKSLASH>;
+    bindings = <&kp UK_BACKSLASH>;
     key-positions = <31 20>;
   };
 
@@ -60,7 +60,7 @@ combos {
   };
 
   combo_pipe {
-    bindings = <&kp PIPE2>;
+    bindings = <&kp UK_PIPE>;
     key-positions = <31 21>;
   };
 
@@ -80,7 +80,7 @@ combos {
   };
 
   combo_tilde {
-    bindings = <&kp TILDE2>;
+    bindings = <&kp UK_TILDE>;
     key-positions = <31 0>;
   };
 
@@ -117,7 +117,7 @@ combos {
   };
 
   combo_hash {
-    bindings = <&kp NON_US_HASH>;
+    bindings = <&kp UK_HASH>;
     key-positions = <32 16>;
   };
 

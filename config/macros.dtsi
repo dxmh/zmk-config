@@ -30,7 +30,7 @@ macro_double_pipe: macro_double_pipe {
   compatible = "zmk,behavior-macro";
   label = "macro_double_pipe";
   #binding-cells = <0>;
-  bindings = <&kp PIPE2>, <&kp PIPE2>, <&kp SPACE>;
+  bindings = <&kp UK_PIPE>, <&kp UK_PIPE>, <&kp SPACE>;
 };
 
 macro_parentheses: macro_parentheses {
