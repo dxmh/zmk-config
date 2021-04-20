@@ -31,7 +31,7 @@
 
     #include "macros.dtsi"
 
-    hxyquotes: single_double_quotes {
+    quote: single_double_quotes {
       compatible = "zmk,behavior-mod-morph";
       label = "SINGLE_DOUBLE_QUOTES";
       #binding-cells = <0>;
@@ -48,7 +48,7 @@
       bindings = <
 
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &kp Q         &kp W         &kp F         &kp P         &lt 3 B           &kp J         &kp L         &kp U         &kp Y         &hxyquotes
+             &kp Q         &kp W         &kp F         &kp P         &lt 3 B           &kp J         &kp L         &kp U         &kp Y         &quote
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &mt LALT A    &mt LSHFT R   &mt LCTRL S   &mt LGUI T    &kp G             &kp M         &mt LGUI N    &mt LCTRL E   &mt LSHFT I   &mt LALT O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
