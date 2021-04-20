@@ -3,6 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+// For a full list of keycodes refer to
+// zmk/app/include/dt-bindings/zmk/keys.h
+
 // UK layout compatibility
 #define UK_DOUBLE_QUOTES AT_SIGN
 #define UK_AT_SIGN DOUBLE_QUOTES
@@ -48,9 +51,9 @@
       bindings = <
 
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &kp Q         &kp W         &mt TAB F     &kp P         &lt 3 B           &kp J         &kp L         &mt TAB U     &kp Y         &quote
+             &kp Q         &kp W         &mt TAB F     &kp P         &kp B             &kp J         &kp L         &mt TAB U     &kp Y         &quote
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &mt LALT A    &mt LSHFT R   &mt LCTRL S   &mt LGUI T    &kp G             &kp M         &mt LGUI N    &mt LCTRL E   &mt LSHFT I   &mt LALT O
+             &mt LALT A    &mt LSHFT R   &mt LCTRL S   &mt LGUI T    &lt 3 G           &lt 3 M       &mt LGUI N    &mt LCTRL E   &mt LSHFT I   &mt LALT O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
@@ -93,9 +96,9 @@
       bindings = <
 
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &none         &none         &none         &none         &none             &none         &none         &none         &none         &none
+             &none         &none         &kp C_VOL_UP  &none         &none             &none         &none         &none         &none         &none
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &none         &none         &none         &none         &none             &none         &out OUT_TOG  &reset        &bootloader   &none
+             &none         &kp C_BRI_DN  &kp C_VOL_DN  &kp C_BRI_UP  &none             &none         &out OUT_TOG  &reset        &bootloader   &none
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &none         &none         &none         &none         &none             &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
