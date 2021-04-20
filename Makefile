@@ -1,3 +1,5 @@
+.PHONY: uf2 clean flash-left flash-right
+
 board=nice_nano
 shield=cradio
 zmk_image=zmkfirmware/zmk-dev-arm:2.4
@@ -21,7 +23,15 @@ define flash
 	cp -av "${uf2}/$(1).uf2" "${bootloader}/"
 endef
 
-.PHONY: uf2 clean
+uf2: zmk
+	$(call build,${shield}_left)
+	$(call build,${shield}_right)
+
+flash-left:
+	$(call flash,${shield}_left)
+
+flash-right:
+	$(call flash,${shield}_right)
 
 zmk:
 	docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" "${zmk_image}" sh -c '\
@@ -32,16 +42,6 @@ zmk:
 		git merge davidphilipbarr/cradio-v2 --no-edit; \
 		west init -l app; \
 		west update;'
-
-uf2: zmk
-	$(call build,${shield}_left)
-	$(call build,${shield}_right)
-
-flash-left:
-	$(call flash,${shield}_left)
-
-flash-right:
-	$(call flash,${shield}_right)
 
 clean:
 	sudo rm -rf "${uf2}" "${zmk}"
