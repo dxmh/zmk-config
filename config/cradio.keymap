@@ -42,6 +42,16 @@
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
+    lst: layer_sticky_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_STICKY_TAP";
+      #binding-cells = <2>;
+      tapping-term-ms = <175>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&sk>;
+    };
+
   };
 
   keymap {
@@ -57,7 +67,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &lt 3 Z       &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &lt 3 SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &kp ESCAPE    &lt 1 SPC         &lt 2 BSPC    &kp ENTER
+                                                       &kp ESCAPE    &lt 1 SPC         &lst 2 LSHFT  &kp ENTER
                                                   // ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
