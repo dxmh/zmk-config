@@ -42,16 +42,6 @@
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
-    lst: layer_sticky_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "LAYER_STICKY_TAP";
-      #binding-cells = <2>;
-      tapping-term-ms = <175>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&mo>, <&sk>;
-    };
-
   };
 
   keymap {
@@ -65,9 +55,9 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &mt LALT A    &mt LSHFT R   &mt LCTRL S   &mt LGUI T    &kp G             &kp M         &mt LGUI N    &mt LCTRL E   &mt LSHFT I   &mt LALT O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &lt 3 Z       &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &lt 3 SLASH
+             &kp Z         &lt 3 X       &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &lt 3 DOT     &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &kp ESCAPE    &lt 1 SPC         &lst 2 LSHFT  &kp ENTER
+                                                       &kp ESCAPE    &lt 1 SPC         &lt 2 BSPC    &kp ENTER
                                                   // ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
@@ -91,13 +81,13 @@
       bindings = <
 
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &none         &kp BSPC      &kp UP        &kp TAB       &none             &none         &none         &none         &kp ESCAPE    &none
+             &none         &kp HOME      &kp UP        &kp END       &none             &none         &none         &none         &none         &none
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &none         &kp LEFT      &kp DOWN      &kp RIGHT     &none             &none         &sk LGUI      &sk LCTRL     &sk LSHFT     &sk LALT
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &none         &none         &none         &none         &none             &none         &none         &none         &none         &none
+             &none         &none         &kp PG_UP     &kp PG_DN     &none             &none         &none         &none         &none         &none
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &trans        &kp ENTER         &trans        &trans
+                                                       &trans        &trans            &trans        &trans
                                                   // ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
