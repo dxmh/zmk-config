@@ -30,6 +30,13 @@ macro_double_pipe: macro_double_pipe {
   compatible = "zmk,behavior-macro";
   label = "macro_double_pipe";
   #binding-cells = <0>;
+  bindings = <&kp PIPE>, <&kp PIPE>, <&kp SPACE>;
+};
+
+macro_uk_double_pipe: macro_uk_double_pipe {
+  compatible = "zmk,behavior-macro";
+  label = "macro_uk_double_pipe";
+  #binding-cells = <0>;
   bindings = <&kp UK_PIPE>, <&kp UK_PIPE>, <&kp SPACE>;
 };
 
@@ -45,4 +52,25 @@ macro_shell_command: macro_shell_command {
   label = "macro_shell_command";
   #binding-cells = <0>;
   bindings = <&kp DOLLAR>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT>;
+};
+
+bt_host1: bt_host1 {
+  compatible = "zmk,behavior-macro";
+  label = "bt_host1";
+  #binding-cells = <0>;
+  bindings = <&bt BT_SEL 0>, <&to BASE_MAC>;
+};
+
+bt_host2: bt_host2 {
+  compatible = "zmk,behavior-macro";
+  label = "bt_host2";
+  #binding-cells = <0>;
+  bindings = <&bt BT_SEL 1>, <&to BASE_MAC>;
+};
+
+bt_host3: bt_host3 {
+  compatible = "zmk,behavior-macro";
+  label = "bt_host3";
+  #binding-cells = <0>;
+  bindings = <&bt BT_SEL 2>, <&to BASE_UK>;
 };

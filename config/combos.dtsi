@@ -15,73 +15,111 @@ combos {
   combo_tab {
     bindings = <&kp TAB>;
     key-positions = <1 2>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_delete {
     bindings = <&kp DELETE>;
     key-positions = <31 32>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_capslock {
     bindings = <&kp CAPSLOCK>;
     key-positions = <11 18>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   // Symbols; left hand
 
   combo_at {
+    bindings = <&kp AT_SIGN>;
+    key-positions = <31 10>;
+    layers = <BASE_MAC>;
+  };
+
+  combo_uk_at {
     bindings = <&kp UK_AT_SIGN>;
     key-positions = <31 10>;
+    layers = <BASE_UK>;
   };
 
   combo_backslash {
+    bindings = <&kp BACKSLASH>;
+    key-positions = <31 20>;
+    layers = <BASE_MAC>;
+  };
+
+  combo_uk_backslash {
     bindings = <&kp UK_BACKSLASH>;
     key-positions = <31 20>;
+    layers = <BASE_UK>;
   };
 
   combo_dash {
     bindings = <&kp MINUS>;
     key-positions = <31 12>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_dollar {
     bindings = <&kp DOLLAR>;
     key-positions = <31 3>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_grave {
     bindings = <&kp GRAVE>;
     key-positions = <31 13>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_left_parenthesis {
     bindings = <&kp LEFT_PARENTHESIS>;
     key-positions = <31 1>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_pipe {
+    bindings = <&kp PIPE>;
+    key-positions = <31 21>;
+    layers = <BASE_MAC>;
+  };
+
+  combo_uk_pipe {
     bindings = <&kp UK_PIPE>;
     key-positions = <31 21>;
+    layers = <BASE_UK>;
   };
 
   combo_plus {
     bindings = <&kp PLUS>;
     key-positions = <31 22>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_right_parenthesis {
     bindings = <&kp RIGHT_PARENTHESIS>;
     key-positions = <31 2>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_semicolon {
     bindings = <&kp SEMICOLON>;
     key-positions = <31 11>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_tilde {
+    bindings = <&kp TILDE>;
+    key-positions = <31 0>;
+    layers = <BASE_MAC>;
+  };
+
+  combo_uk_tilde {
     bindings = <&kp UK_TILDE>;
     key-positions = <31 0>;
+    layers = <BASE_UK>;
   };
 
   // Symbols; right hand
@@ -89,56 +127,73 @@ combos {
   combo_ampersand {
     bindings = <&kp AMPERSAND>;
     key-positions = <32 28>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_asterisk {
     bindings = <&kp ASTERISK>;
     key-positions = <32 19>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_caret {
     bindings = <&kp CARET>;
     key-positions = <32 9>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_colon {
     bindings = <&kp COLON>;
     key-positions = <32 18>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_equals {
     bindings = <&kp EQUAL>;
     key-positions = <32 27>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_exclamation {
     bindings = <&kp EXCLAMATION>;
     key-positions = <32 6>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_hash {
+    bindings = <&kp HASH>;
+    key-positions = <32 16>;
+    layers = <BASE_MAC>;
+  };
+
+  combo_uk_hash {
     bindings = <&kp UK_HASH>;
     key-positions = <32 16>;
+    layers = <BASE_UK>;
   };
 
   combo_left_bracket {
     bindings = <&kp LEFT_BRACKET>;
     key-positions = <32 7>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_percent {
     bindings = <&kp PERCENT>;
     key-positions = <32 29>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_right_bracket {
     bindings = <&kp RIGHT_BRACKET>;
     key-positions = <32 8>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_underscore {
     bindings = <&kp UNDERSCORE>;
     key-positions = <32 17>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   // Common patterns
@@ -146,36 +201,49 @@ combos {
   combo_double_dash {
     bindings = <&macro_double_dash>;
     key-positions = <31 11 12>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_double_ampersand {
     bindings = <&macro_double_ampersand>;
     key-positions = <32 27 28>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_brackets {
     bindings = <&macro_brackets>;
     key-positions = <32 7 8>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_code_fence {
     bindings = <&macro_code_fence>;
     key-positions = <31 12 13>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_double_pipe {
     bindings = <&macro_double_pipe>;
     key-positions = <31 21 22>;
+    layers = <BASE_MAC>;
+  };
+
+  combo_uk_double_pipe {
+    bindings = <&macro_uk_double_pipe>;
+    key-positions = <31 21 22>;
+    layers = <BASE_UK>;
   };
 
   combo_parentheses {
     bindings = <&macro_parentheses>;
     key-positions = <31 1 2>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
   combo_shell_command {
     bindings = <&macro_shell_command>;
     key-positions = <31 1 2 3>;
+    layers = <BASE_UK>, <BASE_MAC>;
   };
 
 };
