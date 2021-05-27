@@ -23,14 +23,18 @@ define flash
 	cp -av "${uf2}/$(1).uf2" "${bootloader}/"
 endef
 
+default: flash-left
+
 uf2: zmk
 	$(call build,${shield}_left)
 	$(call build,${shield}_right)
 
-flash-left:
+flash-left: zmk
+	$(call build,${shield}_left)
 	$(call flash,${shield}_left)
 
-flash-right:
+flash-right: zmk
+	$(call build,${shield}_right)
 	$(call flash,${shield}_right)
 
 zmk:
