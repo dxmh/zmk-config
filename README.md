@@ -7,14 +7,13 @@ My personal [ZMK firmware][3] configuration for my 34-key [Hypergolic][1] wirele
 See [`config/cradio.keymap`](config/cradio.keymap) for a visualisation of the current keymap layout.
 
 * [Colemak Mod-DH][8] layout on the base layer
-* Simple thumb-activated layers for a numpad and navigation cluster
-* Dual function keys for [home-row modifiers][9] and the thumb-activated layers
+* Simple thumb-activated layers for a numpad and a navigation cluster; each with sticky modifiers on the home row
 * Symbols on base layer via one-handed combos (in [`combos.dtsi`](config/combos.dtsi))
 * Macro-combos for symbol n-grams such as `()`, `--` and `` ``` `` (in [`macros.dtsi`](config/macros.dtsi))
 
-The keymap is continuously evolving and I'm still slowly porting across some features from [my QMK keymap][7] (like the [steno-lite][11] functionality).
+The keymap is continuously evolving and I'm still slowly porting across some features from [my QMK keymap][7] (like the [steno-lite][11] functionality). I have recently moved away from dual function keys (such as [home row mods][9]) instead trying sticky keys, in an attempt to reduce the amount of keys that need to be held.
 
-I currently use the [`Makefile`](Makefile) to install a local ZMK environment via the [ZMK Docker images][10], apply my required patches/PRs, and then build my `uf2` binaries ready to flash to the nice!nano microcontrollers. All that by running a single `make` command! I then flash the uf2s with `make flash-left` or `make flash-right`.
+I currently use the [`Makefile`](Makefile) to install a local ZMK environment via the [ZMK Docker images][10], apply my required patches/PRs, and then build and flash my `uf2` binaries to the nice!nano microcontrollers – all by running a single `make` command!
 
 ## Keyboard
 
