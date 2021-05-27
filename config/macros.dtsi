@@ -33,13 +33,6 @@ macro_double_pipe: macro_double_pipe {
   bindings = <&kp PIPE>, <&kp PIPE>, <&kp SPACE>;
 };
 
-macro_uk_double_pipe: macro_uk_double_pipe {
-  compatible = "zmk,behavior-macro";
-  label = "macro_uk_double_pipe";
-  #binding-cells = <0>;
-  bindings = <&kp UK_PIPE>, <&kp UK_PIPE>, <&kp SPACE>;
-};
-
 macro_parentheses: macro_parentheses {
   compatible = "zmk,behavior-macro";
   label = "macro_parentheses";
@@ -54,23 +47,59 @@ macro_shell_command: macro_shell_command {
   bindings = <&kp DOLLAR>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT>;
 };
 
+macro_app1: macro_app1 {
+  compatible = "zmk,behavior-macro";
+  label = "macro_app1";
+  #binding-cells = <0>;
+  bindings = <&kp LGUI>, <&kp T>;
+};
+
+macro_app2: macro_app2 {
+  compatible = "zmk,behavior-macro";
+  label = "macro_app2";
+  #binding-cells = <0>;
+  bindings = <&kp LGUI>, <&kp S>;
+};
+
+macro_app3: macro_app3 {
+  compatible = "zmk,behavior-macro";
+  label = "macro_app3";
+  #binding-cells = <0>;
+  bindings = <&kp LGUI>, <&kp C>;
+};
+
 bt_host1: bt_host1 {
   compatible = "zmk,behavior-macro";
   label = "bt_host1";
   #binding-cells = <0>;
-  bindings = <&bt BT_SEL 0>, <&to BASE_MAC>;
+  bindings = <&bt BT_SEL 0>, <&to BASE_IOS>;
 };
 
 bt_host2: bt_host2 {
   compatible = "zmk,behavior-macro";
   label = "bt_host2";
   #binding-cells = <0>;
-  bindings = <&bt BT_SEL 1>, <&to BASE_MAC>;
+  bindings = <&bt BT_SEL 1>, <&to BASE>;
 };
 
 bt_host3: bt_host3 {
   compatible = "zmk,behavior-macro";
   label = "bt_host3";
   #binding-cells = <0>;
-  bindings = <&bt BT_SEL 2>, <&to BASE_UK>;
+  bindings = <&bt BT_SEL 2>, <&to BASE_IOS>;
 };
+
+macro_ctrl_shift: macro_ctrl_shift {
+  compatible = "zmk,behavior-macro";
+  label = "macro_ctrl_shift";
+  #binding-cells = <0>;
+  bindings = <&kp LCTRL>, <&kp LSHFT>;
+};
+
+macro_flash: macro_flash {
+  compatible = "zmk,behavior-macro";
+  label = "macro_flash";
+  #binding-cells = <0>;
+  bindings = <&kp LG(LA(K))>, <&none>, <&bootloader>;
+};
+

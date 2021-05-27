@@ -10,240 +10,286 @@ combos {
 
   compatible = "zmk,combos";
 
-  // Control and whitespace
+  combo_esc {
+    bindings = <&kp ESC>;
+    key-positions = <2 3>;
+    layers = <BASE>, <BASE_IOS>;
+  };
 
   combo_tab {
     bindings = <&kp TAB>;
     key-positions = <1 2>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
-  combo_delete {
-    bindings = <&kp DELETE>;
-    key-positions = <31 32>;
-    layers = <BASE_UK>, <BASE_MAC>;
+  combo_ctrl_shift_nav {
+    bindings = <&macro_ctrl_shift>;
+    key-positions = <7 8>;
+    layers = <HXY>, <HXY_IOS>;
   };
 
-  combo_capslock {
-    bindings = <&kp CAPSLOCK>;
-    key-positions = <11 18>;
-    layers = <BASE_UK>, <BASE_MAC>;
+  combo_enter {
+    bindings = <&kp ENTER>;
+    key-positions = <27 28>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
-  // Symbols; left hand
+  combo_copy {
+    bindings = <&kp LC(C)>;
+    key-positions = <21 22>;
+    layers = <BASE>;
+  };
+
+  combo_copy_ios {
+    bindings = <&kp LG(C)>;
+    key-positions = <21 22>;
+    layers = <BASE_IOS>;
+  };
+
+  combo_paste {
+    bindings = <&kp LC(V)>;
+    key-positions = <21 22 23>;
+    layers = <BASE>;
+  };
+
+  combo_paste_ios {
+    bindings = <&kp LG(V)>;
+    key-positions = <21 22 23>;
+    layers = <BASE_IOS>;
+  };
+
+  combo_app1 {
+    bindings = <&macro_app1>;
+    key-positions = <3 13>;
+    layers = <BASE>, <BASE_IOS>;
+  };
+
+  combo_app2 {
+    bindings = <&macro_app2>;
+    key-positions = <2 12>;
+    layers = <BASE>, <BASE_IOS>;
+  };
+
+  combo_app3 {
+    bindings = <&macro_app3>;
+    key-positions = <1 11>;
+    layers = <BASE>, <BASE_IOS>;
+  };
+
+  combo_previous_tab {
+    bindings = <&kp LC(TAB)>;
+    key-positions = <13 23>;
+    layers = <BASE>;
+  };
+
+  combo_previous_app {
+    bindings = <&kp LG(TAB)>;
+    key-positions = <12 22>;
+    layers = <BASE>, <BASE_IOS>;
+  };
+
+  combo_app_overview {
+    bindings = <&kp LG(SPACE)>;
+    key-positions = <11 21>;
+    layers = <BASE>;
+  };
+
+  combo_host1 {
+    bindings = <&bt_host1>;
+    key-positions = <3 13>;
+    layers = <HXY>, <HXY_IOS>;
+  };
+
+  combo_host2 {
+    bindings = <&bt_host2>;
+    key-positions = <2 12>;
+    layers = <HXY>, <HXY_IOS>;
+  };
+
+  combo_host3 {
+    bindings = <&bt_host3>;
+    key-positions = <1 11>;
+    layers = <HXY>, <HXY_IOS>;
+  };
+
+  combo_flash {
+    bindings = <&macro_flash>;
+    key-positions = <3 4 13 14>;
+    layers = <BASE>;
+  };
 
   combo_at {
     bindings = <&kp AT_SIGN>;
     key-positions = <31 10>;
-    layers = <BASE_MAC>;
-  };
-
-  combo_uk_at {
-    bindings = <&kp UK_AT_SIGN>;
-    key-positions = <31 10>;
-    layers = <BASE_UK>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_backslash {
     bindings = <&kp BACKSLASH>;
     key-positions = <31 20>;
-    layers = <BASE_MAC>;
-  };
-
-  combo_uk_backslash {
-    bindings = <&kp UK_BACKSLASH>;
-    key-positions = <31 20>;
-    layers = <BASE_UK>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_dash {
     bindings = <&kp MINUS>;
     key-positions = <31 12>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_dollar {
     bindings = <&kp DOLLAR>;
     key-positions = <31 3>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_grave {
     bindings = <&kp GRAVE>;
     key-positions = <31 13>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_left_parenthesis {
     bindings = <&kp LEFT_PARENTHESIS>;
     key-positions = <31 1>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_pipe {
     bindings = <&kp PIPE>;
     key-positions = <31 21>;
-    layers = <BASE_MAC>;
-  };
-
-  combo_uk_pipe {
-    bindings = <&kp UK_PIPE>;
-    key-positions = <31 21>;
-    layers = <BASE_UK>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_plus {
     bindings = <&kp PLUS>;
     key-positions = <31 22>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_right_parenthesis {
     bindings = <&kp RIGHT_PARENTHESIS>;
     key-positions = <31 2>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_semicolon {
     bindings = <&kp SEMICOLON>;
     key-positions = <31 11>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_tilde {
     bindings = <&kp TILDE>;
     key-positions = <31 0>;
-    layers = <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
-
-  combo_uk_tilde {
-    bindings = <&kp UK_TILDE>;
-    key-positions = <31 0>;
-    layers = <BASE_UK>;
-  };
-
-  // Symbols; right hand
 
   combo_ampersand {
     bindings = <&kp AMPERSAND>;
     key-positions = <32 28>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_asterisk {
     bindings = <&kp ASTERISK>;
     key-positions = <32 19>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_caret {
     bindings = <&kp CARET>;
     key-positions = <32 9>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_colon {
     bindings = <&kp COLON>;
     key-positions = <32 18>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_equals {
     bindings = <&kp EQUAL>;
     key-positions = <32 27>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_exclamation {
     bindings = <&kp EXCLAMATION>;
     key-positions = <32 6>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_hash {
     bindings = <&kp HASH>;
     key-positions = <32 16>;
-    layers = <BASE_MAC>;
-  };
-
-  combo_uk_hash {
-    bindings = <&kp UK_HASH>;
-    key-positions = <32 16>;
-    layers = <BASE_UK>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_left_bracket {
     bindings = <&kp LEFT_BRACKET>;
     key-positions = <32 7>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_percent {
     bindings = <&kp PERCENT>;
     key-positions = <32 29>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_right_bracket {
     bindings = <&kp RIGHT_BRACKET>;
     key-positions = <32 8>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_underscore {
     bindings = <&kp UNDERSCORE>;
     key-positions = <32 17>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
-
-  // Common patterns
 
   combo_double_dash {
     bindings = <&macro_double_dash>;
     key-positions = <31 11 12>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_double_ampersand {
     bindings = <&macro_double_ampersand>;
     key-positions = <32 27 28>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_brackets {
     bindings = <&macro_brackets>;
     key-positions = <32 7 8>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_code_fence {
     bindings = <&macro_code_fence>;
     key-positions = <31 12 13>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_double_pipe {
     bindings = <&macro_double_pipe>;
     key-positions = <31 21 22>;
-    layers = <BASE_MAC>;
-  };
-
-  combo_uk_double_pipe {
-    bindings = <&macro_uk_double_pipe>;
-    key-positions = <31 21 22>;
-    layers = <BASE_UK>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_parentheses {
     bindings = <&macro_parentheses>;
     key-positions = <31 1 2>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_shell_command {
     bindings = <&macro_shell_command>;
     key-positions = <31 1 2 3>;
-    layers = <BASE_UK>, <BASE_MAC>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
 };
