@@ -12,7 +12,7 @@ combos {
 
   combo_esc {
     bindings = <&kp ESC>;
-    key-positions = <2 3>;
+    key-positions = <11 12>;
     layers = <BASE>, <BASE_IOS>;
   };
 
@@ -31,6 +31,12 @@ combos {
   combo_enter {
     bindings = <&kp ENTER>;
     key-positions = <27 28>;
+    layers = <BASE>, <BASE_IOS>;
+  };
+
+  combo_enter2 {
+    bindings = <&kp ENTER>;
+    key-positions = <17 18>;
     layers = <BASE>, <BASE_IOS>;
   };
 
@@ -88,10 +94,22 @@ combos {
     layers = <BASE>, <BASE_IOS>;
   };
 
+  combo_previous_app2 {
+    bindings = <&kp LG(TAB)>;
+    key-positions = <2 3>;
+    layers = <BASE>, <BASE_IOS>;
+  };
+
   combo_app_overview {
     bindings = <&kp LG(SPACE)>;
     key-positions = <11 21>;
     layers = <BASE>;
+  };
+
+  combo_app_overview2 {
+    bindings = <&kp LG(SPACE)>;
+    key-positions = <1 2 3>;
+    layers = <BASE>, <BASE_IOS>;
   };
 
   combo_host1 {

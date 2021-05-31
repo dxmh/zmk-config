@@ -12,6 +12,13 @@ macro_double_ampersand: macro_double_ampersand {
   bindings = <&kp AMPERSAND>, <&kp AMPERSAND>, <&kp SPACE>;
 };
 
+macro_angle_brackets: macro_angle_brackets {
+  compatible = "zmk,behavior-macro";
+  label = "macro_angle_brackets";
+  #binding-cells = <0>;
+  bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>, <&kp LEFT>;
+};
+
 macro_brackets: macro_brackets {
   compatible = "zmk,behavior-macro";
   label = "macro_brackets";
