@@ -22,12 +22,6 @@ combos {
     layers = <BASE>, <BASE_IOS>;
   };
 
-  combo_ctrl_shift_nav {
-    bindings = <&macro_ctrl_shift>;
-    key-positions = <7 8>;
-    layers = <HXY>, <HXY_IOS>;
-  };
-
   combo_enter {
     bindings = <&kp ENTER>;
     key-positions = <27 28>;
@@ -115,19 +109,19 @@ combos {
   combo_host1 {
     bindings = <&bt_host1>;
     key-positions = <3 13>;
-    layers = <HXY>, <HXY_IOS>;
+    layers = <NAV>, <NAV_IOS>;
   };
 
   combo_host2 {
     bindings = <&bt_host2>;
     key-positions = <2 12>;
-    layers = <HXY>, <HXY_IOS>;
+    layers = <NAV>, <NAV_IOS>;
   };
 
   combo_host3 {
     bindings = <&bt_host3>;
     key-positions = <1 11>;
-    layers = <HXY>, <HXY_IOS>;
+    layers = <NAV>, <NAV_IOS>;
   };
 
   combo_flash {
