@@ -12,10 +12,19 @@
 #define NAV_IOS 3
 #define NUM 4
 
-#define PREV LC(PG_UP)
 #define NEXT LC(PG_DN)
-#define IOS_PREV LS(LG(LBKT))
-#define IOS_NEXT LS(LG(RBKT))
+#define PREV LC(PG_UP)
+#define WORD_BS LC(BSPC)
+#define WORD_L LC(LEFT)
+#define WORD_R LC(RIGHT)
+
+#define iEND LG(RIGHT)
+#define iHOME LG(LEFT)
+#define iNEXT LS(LG(RBKT))
+#define iPREV LS(LG(LBKT))
+#define iWORD_BS LA(BSPC)
+#define iWORD_L LA(LEFT)
+#define iWORD_R LA(RIGHT)
 
 / {
 
@@ -49,7 +58,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX           &kp LALT      &kp LCTRL     &kp LGUI      XXX               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX           &kp LSHFT     XXX           XXX           XXX               XXX           &kp LC(LEFT)  &kp LC(BSPC)  &kp LC(RIGHT) XXX
+             XXX           &kp LSHFT     XXX           XXX           XXX               XXX           &kp WORD_L    &kp WORD_BS   &kp WORD_R    XXX
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                        ___           ___               &kp BSPC      &kp ENTER
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
@@ -73,11 +82,11 @@
     nav_layer_ios {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             XXX           &kp IOS_PREV  &kp IOS_NEXT  XXX           XXX               &kp PG_UP     &kp LG(LEFT)  &kp UP        &kp LG(RIGHT) XXX
+             XXX           &kp iPREV     &kp iNEXT     XXX           XXX               &kp PG_UP     &kp iHOME     &kp UP        &kp iEND      XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX           &kp LALT      &kp LCTRL     &kp LGUI      XXX               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX           &kp LSHFT     XXX           XXX           XXX               XXX           &kp LA(LEFT)  &kp LA(BSPC)  &kp LA(RIGHT) XXX
+             XXX           &kp LSHFT     XXX           XXX           XXX               XXX           &kp iWORD_L   &kp iWORD_BS  &kp iWORD_R   XXX
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                        ___           ___               &kp BSPC      &kp ENTER
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
