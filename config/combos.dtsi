@@ -32,10 +32,12 @@ combos {
   COMBO(previous_app, &kp LG(TAB), 12 22, BASE BASE_IOS)
   COMBO(previous_tab, &kp LC(TAB), 13 23, BASE)
 
+  COMBO(adjust, &mo ADJ, 30 31, BASE BASE_IOS)
+  COMBO(reset, &reset, 10 20, BASE BASE_IOS)
+  COMBO(bootloader, &bootloader, 10 19 20 29, BASE BASE_IOS)
   COMBO(flash, &macro_flash, 3 4 13 14, BASE)
-  COMBO(host1, &bt_host1, 3 13, NAV NAV_IOS)
-  COMBO(host2, &bt_host2, 2 12, NAV NAV_IOS)
-  COMBO(host3, &bt_host3, 1 11, NAV NAV_IOS)
+  COMBO(host1, &bt_host1, 4 14, BASE)
+  COMBO(host2, &bt_host2, 4 14, BASE_IOS)
 
   COMBO(ampersand, &kp AMPERSAND, 32 28, BASE BASE_IOS)
   COMBO(asterisk, &kp ASTERISK, 32 19, BASE BASE_IOS)
