@@ -15,6 +15,7 @@
 
 #define NEXT LC(PG_DN)
 #define PREV LC(PG_UP)
+#define SW_APP LG(TAB)
 #define WORD_BS LC(BSPC)
 #define WORD_L LC(LEFT)
 #define WORD_R LC(RIGHT)
@@ -55,7 +56,7 @@
     nav_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             XXX           &kp PREV      &kp NEXT      XXX           XXX               &kp PG_UP     &kp HOME      &kp UP        &kp END       XXX
+             XXX           &kp SW_APP    &kp PREV      &kp NEXT      XXX               &kp PG_UP     &kp HOME      &kp UP        &kp END       XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX           &kp LALT      &kp LCTRL     &kp LGUI      XXX               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -83,7 +84,7 @@
     nav_layer_ios {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             XXX           &kp iPREV     &kp iNEXT     XXX           XXX               &kp PG_UP     &kp iHOME     &kp UP        &kp iEND      XXX
+             XXX           &kp SW_APP    &kp iPREV     &kp iNEXT     XXX               &kp PG_UP     &kp iHOME     &kp UP        &kp iEND      XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX           &kp LALT      &kp LCTRL     &kp LGUI      XXX               &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
