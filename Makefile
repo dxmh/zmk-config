@@ -65,7 +65,7 @@ fresh:
 # Fix thumb keys on this particular Sweep PCB
 sweep_prototype: fresh
 	${docker_run} sed -i \
-		-e 's/RC(0,15)  RC(0,16)/RC(0,16)  RC(0,15)/' \
+		-e 's/RC(0,15) RC(0,16)/RC(0,16) RC(0,15)/' \
 		-e 's/RC(0,33) RC(0,32)/RC(0,32) RC(0,33)/' \
 		/zmk/app/boards/shields/cradio/cradio.dtsi
 
