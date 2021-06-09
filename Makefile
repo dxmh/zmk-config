@@ -8,14 +8,14 @@ nicenano_mount=/media/${USER}/NICENANO
 zmk_image=zmkfirmware/zmk-dev-arm:2.4
 docker_run=docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" \
 	-v "${config}:/zmk-config" -v "${uf2}:/uf2" ${zmk_image}
-builds=hypergolic hypergolic_peripheral sweep sweep_peripheral
+builds=hypergolic hypergolic-peripheral sweep sweep-peripheral
 
 define _build
 	${docker_run} sh -c '\
 		west build --pristine --board "$(1)" app -- \
 			-DSHIELD="$(2)" \
 			-DZMK_CONFIG="/zmk-config" \
-			-DZMK_CONFIG_KEYBOARD_NAME="$(3)" \
+			-DCONFIG_ZMK_KEYBOARD_NAME="\"$(3)\"" \
 		&& cp -av /zmk/build/zephyr/zmk.uf2 /uf2/$(3).uf2'
 endef
 
@@ -29,14 +29,14 @@ default: sweep
 hypergolic: zmk fresh
 	$(call _build,nice_nano,cradio_left,Hypergolic)
 
-hypergolic_peripheral: zmk fresh
-	$(call _build,nice_nano,cradio_right,Hypergolic_Peripheral)
+hypergolic-peripheral: zmk fresh
+	$(call _build,nice_nano,cradio_right,Hypergolic-P)
 
 sweep: zmk sweep_prototype
 	$(call _build,nice_nano,cradio_left,Sweep)
 
-sweep_peripheral: zmk sweep_prototype
-	$(call _build,nice_nano,cradio_right,Sweep_Peripheral)
+sweep-peripheral: zmk sweep_prototype
+	$(call _build,nice_nano,cradio_right,Sweep-P)
 
 all: $(builds)
 
@@ -45,9 +45,9 @@ flash:
 	@ while [ ! -b ${nicenano_device} ]; do sleep 1; printf "."; done
 	@ findmnt ${nicenano_device} || udisksctl mount --block-device ${nicenano_device}
 	@ $(call _flash,45C483E59AD308DE,Hypergolic)
-	@ $(call _flash,D33E2CFB15C7D816,Hypergolic_Peripheral)
+	@ $(call _flash,D33E2CFB15C7D816,Hypergolic-P)
 	@ $(call _flash,21CA6AAAD49DF81A,Sweep)
-	@ $(call _flash,8AA1DA68593FABC1,Sweep_Peripheral)
+	@ $(call _flash,8AA1DA68593FABC1,Sweep-P)
 
 zmk:
 	${docker_run} sh -c '\
