@@ -1,10 +1,13 @@
 /*                KEY POSITIONS
+
   ╭────────────────────╮ ╭────────────────────╮
   │  0   1   2   3   4 │ │  5   6   7   8   9 │
   │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
   │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
   ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
               ╰────────╯ ╰────────╯            */
+
+compatible = "zmk,combos";
 
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
   combo_##NAME { \
@@ -13,62 +16,58 @@
     layers = <LAYERS>; \
   };
 
-combos {
-  compatible = "zmk,combos";
+COMBO(enter, &kp ENTER, 17 18, BASE BASE_IOS)
+COMBO(esc, &kp ESC, 11 12, BASE BASE_IOS)
+COMBO(tab, &kp TAB, 1 2, BASE BASE_IOS)
+COMBO(num, &mo NUM, 30 31, BASE BASE_IOS)
 
-  COMBO(enter, &kp ENTER, 17 18, BASE BASE_IOS)
-  COMBO(esc, &kp ESC, 11 12, BASE BASE_IOS)
-  COMBO(tab, &kp TAB, 1 2, BASE BASE_IOS)
+COMBO(copy, &kp LC(C), 21 22, BASE)
+COMBO(copy_ios, &kp LG(C), 21 22, BASE_IOS)
+COMBO(paste, &kp LC(V), 21 22 23, BASE)
+COMBO(paste_ios, &kp LG(V), 21 22 23, BASE_IOS)
 
-  COMBO(copy, &kp LC(C), 21 22, BASE)
-  COMBO(copy_ios, &kp LG(C), 21 22, BASE_IOS)
-  COMBO(paste, &kp LC(V), 21 22 23, BASE)
-  COMBO(paste_ios, &kp LG(V), 21 22 23, BASE_IOS)
+COMBO(app1, &macro_app1, 3 13, BASE BASE_IOS)
+COMBO(app2, &macro_app2, 2 12, BASE BASE_IOS)
+COMBO(app3, &macro_app3, 1 11, BASE BASE_IOS)
+COMBO(app_overview, &kp LG(SPACE), 1 2 3, BASE BASE_IOS)
+COMBO(previous_app, &kp LG(TAB), 2 3, BASE BASE_IOS)
+COMBO(previous_tab, &kp LC(TAB), 13 23, BASE)
+COMBO(mic_mute_left, &kp LG(BACKSLASH), 14 24, BASE)
+COMBO(mic_mute_right, &kp LG(BACKSLASH), 15 25, BASE)
 
-  COMBO(app1, &macro_app1, 3 13, BASE BASE_IOS)
-  COMBO(app2, &macro_app2, 2 12, BASE BASE_IOS)
-  COMBO(app3, &macro_app3, 1 11, BASE BASE_IOS)
-  COMBO(app_overview, &kp LG(SPACE), 1 2 3, BASE BASE_IOS)
-  COMBO(previous_app, &kp LG(TAB), 2 3, BASE BASE_IOS)
-  COMBO(previous_tab, &kp LC(TAB), 13 23, BASE)
-  COMBO(mic_mute_left, &kp LG(BACKSLASH), 14 24, BASE)
-  COMBO(mic_mute_right, &kp LG(BACKSLASH), 15 25, BASE)
+COMBO(reset, &reset, 10 20, BASE BASE_IOS)
+COMBO(bootloader, &bootloader, 10 19 20 29, BASE BASE_IOS)
+COMBO(flash, &macro_flash, 3 4 13 14, BASE)
+COMBO(bt1, &bt_host1, 4 14, BASE)
+COMBO(bt2, &bt_host2, 4 14, BASE_IOS)
 
-  COMBO(adjust, &mo ADJ, 30 31, BASE BASE_IOS)
-  COMBO(reset, &reset, 10 20, BASE BASE_IOS)
-  COMBO(bootloader, &bootloader, 10 19 20 29, BASE BASE_IOS)
-  COMBO(flash, &macro_flash, 3 4 13 14, BASE)
-  COMBO(host1, &bt_host1, 4 14, BASE)
-  COMBO(host2, &bt_host2, 4 14, BASE_IOS)
+COMBO(ampersand, &kp AMPERSAND, 32 28, BASE BASE_IOS)
+COMBO(asterisk, &kp ASTERISK, 32 19, BASE BASE_IOS)
+COMBO(at, &kp AT_SIGN, 31 10, BASE BASE_IOS)
+COMBO(backslash, &kp BACKSLASH, 31 20, BASE BASE_IOS)
+COMBO(caret, &kp CARET, 32 9, BASE BASE_IOS)
+COMBO(colon, &kp COLON, 32 18, BASE BASE_IOS)
+COMBO(dash, &kp MINUS, 31 12, BASE BASE_IOS)
+COMBO(dollar, &kp DOLLAR, 31 3, BASE BASE_IOS)
+COMBO(equals, &kp EQUAL, 32 27, BASE BASE_IOS)
+COMBO(exclamation, &kp EXCLAMATION, 32 6, BASE BASE_IOS)
+COMBO(grave, &kp GRAVE, 31 13, BASE BASE_IOS)
+COMBO(hash, &kp HASH, 32 16, BASE BASE_IOS)
+COMBO(left_bracket, &kp LEFT_BRACKET, 32 7, BASE BASE_IOS)
+COMBO(left_parenthesis, &kp LEFT_PARENTHESIS, 31 1, BASE BASE_IOS)
+COMBO(percent, &kp PERCENT, 32 29, BASE BASE_IOS)
+COMBO(pipe, &kp PIPE, 31 21, BASE BASE_IOS)
+COMBO(plus, &kp PLUS, 31 22, BASE BASE_IOS)
+COMBO(right_bracket, &kp RIGHT_BRACKET, 32 8, BASE BASE_IOS)
+COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 31 2, BASE BASE_IOS)
+COMBO(semicolon, &kp SEMICOLON, 31 11, BASE BASE_IOS)
+COMBO(tilde, &kp TILDE, 31 0, BASE BASE_IOS)
+COMBO(underscore, &kp UNDERSCORE, 32 17, BASE BASE_IOS)
 
-  COMBO(ampersand, &kp AMPERSAND, 32 28, BASE BASE_IOS)
-  COMBO(asterisk, &kp ASTERISK, 32 19, BASE BASE_IOS)
-  COMBO(at, &kp AT_SIGN, 31 10, BASE BASE_IOS)
-  COMBO(backslash, &kp BACKSLASH, 31 20, BASE BASE_IOS)
-  COMBO(caret, &kp CARET, 32 9, BASE BASE_IOS)
-  COMBO(colon, &kp COLON, 32 18, BASE BASE_IOS)
-  COMBO(dash, &kp MINUS, 31 12, BASE BASE_IOS)
-  COMBO(dollar, &kp DOLLAR, 31 3, BASE BASE_IOS)
-  COMBO(equals, &kp EQUAL, 32 27, BASE BASE_IOS)
-  COMBO(exclamation, &kp EXCLAMATION, 32 6, BASE BASE_IOS)
-  COMBO(grave, &kp GRAVE, 31 13, BASE BASE_IOS)
-  COMBO(hash, &kp HASH, 32 16, BASE BASE_IOS)
-  COMBO(left_bracket, &kp LEFT_BRACKET, 32 7, BASE BASE_IOS)
-  COMBO(left_parenthesis, &kp LEFT_PARENTHESIS, 31 1, BASE BASE_IOS)
-  COMBO(percent, &kp PERCENT, 32 29, BASE BASE_IOS)
-  COMBO(pipe, &kp PIPE, 31 21, BASE BASE_IOS)
-  COMBO(plus, &kp PLUS, 31 22, BASE BASE_IOS)
-  COMBO(right_bracket, &kp RIGHT_BRACKET, 32 8, BASE BASE_IOS)
-  COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 31 2, BASE BASE_IOS)
-  COMBO(semicolon, &kp SEMICOLON, 31 11, BASE BASE_IOS)
-  COMBO(tilde, &kp TILDE, 31 0, BASE BASE_IOS)
-  COMBO(underscore, &kp UNDERSCORE, 32 17, BASE BASE_IOS)
-
-  COMBO(brackets, &macro_brackets, 32 7 8, BASE BASE_IOS)
-  COMBO(code_fence, &macro_code_fence, 31 12 13, BASE BASE_IOS)
-  COMBO(double_ampersand, &macro_double_ampersand, 32 27 28, BASE BASE_IOS)
-  COMBO(double_dash, &macro_double_dash, 31 11 12, BASE BASE_IOS)
-  COMBO(double_pipe, &macro_double_pipe, 31 21 22, BASE BASE_IOS)
-  COMBO(parentheses, &macro_parentheses, 31 1 2, BASE BASE_IOS)
-  COMBO(shell_command, &macro_shell_command, 31 1 2 3, BASE BASE_IOS)
-};
+COMBO(brackets, &macro_brackets, 32 7 8, BASE BASE_IOS)
+COMBO(code_fence, &macro_code_fence, 31 12 13, BASE BASE_IOS)
+COMBO(double_ampersand, &macro_double_ampersand, 32 27 28, BASE BASE_IOS)
+COMBO(double_dash, &macro_double_dash, 31 11 12, BASE BASE_IOS)
+COMBO(double_pipe, &macro_double_pipe, 31 21 22, BASE BASE_IOS)
+COMBO(parentheses, &macro_parentheses, 31 1 2, BASE BASE_IOS)
+COMBO(shell_command, &macro_shell_command, 31 1 2 3, BASE BASE_IOS)

@@ -30,7 +30,9 @@
 
 / {
 
-  #include "combos.dtsi"
+  combos {
+    #include "combos.dtsi"
+  };
 
   behaviors {
     #include "macros.dtsi"
