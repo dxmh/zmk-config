@@ -31,6 +31,8 @@ combos {
   COMBO(app_overview, &kp LG(SPACE), 1 2 3, BASE BASE_IOS)
   COMBO(previous_app, &kp LG(TAB), 2 3, BASE BASE_IOS)
   COMBO(previous_tab, &kp LC(TAB), 13 23, BASE)
+  COMBO(mic_mute_left, &kp LG(BACKSLASH), 14 24, BASE)
+  COMBO(mic_mute_right, &kp LG(BACKSLASH), 15 25, BASE)
 
   COMBO(adjust, &mo ADJ, 30 31, BASE BASE_IOS)
   COMBO(reset, &reset, 10 20, BASE BASE_IOS)
