@@ -67,5 +67,8 @@ sweep_prototype: fresh
 		-e 's/RC(0,33) RC(0,32)/RC(0,32) RC(0,33)/' \
 		/zmk/app/boards/shields/cradio/cradio.dtsi
 
+test:
+	${docker_run} west test
+
 clean:
 	sudo rm -rf "${uf2}" "${zmk}"
