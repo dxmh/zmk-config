@@ -53,9 +53,7 @@ zmk:
 	${docker_run} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
 		git remote add -ft macros okke-formsa https://github.com/okke-formsma/zmk; \
-		git remote add -ft cradio-v2 davidphilipbarr https://github.com/davidphilipbarr/zmk; \
 		git merge okke-formsa/macros --no-edit; \
-		git merge davidphilipbarr/cradio-v2 --no-edit; \
 		west init -l app; \
 		west update'
 
