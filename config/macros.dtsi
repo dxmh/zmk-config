@@ -58,21 +58,21 @@ macro_app1: macro_app1 {
   compatible = "zmk,behavior-macro";
   label = "macro_app1";
   #binding-cells = <0>;
-  bindings = <&kp LGUI>, <&kp T>;
+  bindings = <&kp LG(T)>;
 };
 
 macro_app2: macro_app2 {
   compatible = "zmk,behavior-macro";
   label = "macro_app2";
   #binding-cells = <0>;
-  bindings = <&kp LGUI>, <&kp S>;
+  bindings = <&kp LG(S)>;
 };
 
 macro_app3: macro_app3 {
   compatible = "zmk,behavior-macro";
   label = "macro_app3";
   #binding-cells = <0>;
-  bindings = <&kp LGUI>, <&kp C>;
+  bindings = <&kp LG(C)>;
 };
 
 bt_host1: bt_host1 {
