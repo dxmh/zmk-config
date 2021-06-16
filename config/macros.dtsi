@@ -1,112 +1,28 @@
-macro_double_dash: macro_double_dash {
-  compatible = "zmk,behavior-macro";
-  label = "macro_double_dash";
-  #binding-cells = <0>;
-  bindings = <&kp MINUS>, <&kp MINUS>;
-};
+#define str(s) #s
 
-macro_double_ampersand: macro_double_ampersand {
-  compatible = "zmk,behavior-macro";
-  label = "macro_double_ampersand";
-  #binding-cells = <0>;
-  bindings = <&kp AMPERSAND>, <&kp AMPERSAND>, <&kp SPACE>;
-};
+#define MACRO(NAME, BINDINGS) \
+  macro_##NAME: macro_##NAME { \
+    compatible = "zmk,behavior-macro"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <BINDINGS>; \
+  };
 
-macro_angle_brackets: macro_angle_brackets {
-  compatible = "zmk,behavior-macro";
-  label = "macro_angle_brackets";
-  #binding-cells = <0>;
-  bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>, <&kp LEFT>;
-};
+MACRO(double_dash, &kp MINUS &kp MINUS)
+MACRO(double_ampersand, &kp AMPERSAND &kp AMPERSAND &kp SPACE)
+MACRO(angle_brackets, &kp LESS_THAN &kp GREATER_THAN &kp LEFT)
+MACRO(brackets, &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT)
+MACRO(code_fence, &kp GRAVE &kp GRAVE &kp GRAVE)
+MACRO(double_pipe, &kp PIPE &kp PIPE &kp SPACE)
+MACRO(parentheses, &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT)
+MACRO(shell_command, &kp DOLLAR &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT)
 
-macro_brackets: macro_brackets {
-  compatible = "zmk,behavior-macro";
-  label = "macro_brackets";
-  #binding-cells = <0>;
-  bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&kp LEFT>;
-};
+MACRO(app1, &kp LG(T))
+MACRO(app2, &kp LG(S))
+MACRO(app3, &kp LG(C))
 
-macro_code_fence: macro_code_fence {
-  compatible = "zmk,behavior-macro";
-  label = "macro_code_fence";
-  #binding-cells = <0>;
-  bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
-};
+MACRO(bt1, &bt BT_SEL 0 &to BASE_IOS)
+MACRO(bt2, &bt BT_SEL 1 &to BASE)
+MACRO(bt3, &bt BT_SEL 2 &to BASE_IOS)
 
-macro_double_pipe: macro_double_pipe {
-  compatible = "zmk,behavior-macro";
-  label = "macro_double_pipe";
-  #binding-cells = <0>;
-  bindings = <&kp PIPE>, <&kp PIPE>, <&kp SPACE>;
-};
-
-macro_parentheses: macro_parentheses {
-  compatible = "zmk,behavior-macro";
-  label = "macro_parentheses";
-  #binding-cells = <0>;
-  bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT>;
-};
-
-macro_shell_command: macro_shell_command {
-  compatible = "zmk,behavior-macro";
-  label = "macro_shell_command";
-  #binding-cells = <0>;
-  bindings = <&kp DOLLAR>, <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>, <&kp LEFT>;
-};
-
-macro_app1: macro_app1 {
-  compatible = "zmk,behavior-macro";
-  label = "macro_app1";
-  #binding-cells = <0>;
-  bindings = <&kp LG(T)>;
-};
-
-macro_app2: macro_app2 {
-  compatible = "zmk,behavior-macro";
-  label = "macro_app2";
-  #binding-cells = <0>;
-  bindings = <&kp LG(S)>;
-};
-
-macro_app3: macro_app3 {
-  compatible = "zmk,behavior-macro";
-  label = "macro_app3";
-  #binding-cells = <0>;
-  bindings = <&kp LG(C)>;
-};
-
-bt_host1: bt_host1 {
-  compatible = "zmk,behavior-macro";
-  label = "bt_host1";
-  #binding-cells = <0>;
-  bindings = <&bt BT_SEL 0>, <&to BASE_IOS>;
-};
-
-bt_host2: bt_host2 {
-  compatible = "zmk,behavior-macro";
-  label = "bt_host2";
-  #binding-cells = <0>;
-  bindings = <&bt BT_SEL 1>, <&to BASE>;
-};
-
-bt_host3: bt_host3 {
-  compatible = "zmk,behavior-macro";
-  label = "bt_host3";
-  #binding-cells = <0>;
-  bindings = <&bt BT_SEL 2>, <&to BASE_IOS>;
-};
-
-macro_ctrl_shift: macro_ctrl_shift {
-  compatible = "zmk,behavior-macro";
-  label = "macro_ctrl_shift";
-  #binding-cells = <0>;
-  bindings = <&kp LCTRL>, <&kp LSHFT>;
-};
-
-macro_flash: macro_flash {
-  compatible = "zmk,behavior-macro";
-  label = "macro_flash";
-  #binding-cells = <0>;
-  bindings = <&kp LG(LA(K))>, <&none>, <&bootloader>;
-};
-
+MACRO(flash, &kp LG(LA(K)) &none &bootloader)
