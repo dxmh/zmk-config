@@ -21,6 +21,8 @@ COMBO(esc, &kp ESC, 11 12, BASE BASE_IOS)
 COMBO(tab, &kp TAB, 1 2, BASE BASE_IOS)
 COMBO(num, &mo NUM, 30 31, BASE BASE_IOS)
 
+COMBO(keyboard_toggle, &kp C_EJECT, 5 15, BASE_IOS)
+
 COMBO(undo, &kp LC(Z), 20 21, BASE)
 COMBO(cut, &kp LC(X), 20 22, BASE)
 COMBO(copy, &kp LC(C), 21 22, BASE)
