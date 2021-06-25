@@ -53,9 +53,7 @@ zmk:
 	${docker_run} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
 		git remote add -ft macros okke-formsa https://github.com/okke-formsma/zmk; \
-		git remote add -ft pr_tap_dance_june kurtis-lew https://github.com/kurtis-lew/zmk; \
 		git merge okke-formsa/macros --no-edit; \
-		git merge kurtis-lew/pr_tap_dance_june --no-edit; \
 		west init -l app; \
 		west update'
 

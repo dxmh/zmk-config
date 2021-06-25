@@ -40,17 +40,7 @@
   };
 
   behaviors {
-
     #include "macros.dtsi"
-
-    shift_caps: shift_caps {
-      compatible = "zmk,behavior-tap-dance";
-      label = "shift_caps";
-      #binding-cells = <0>;
-      tapping_term_ms = <250>;
-      bindings = <&sk LSHIFT>, <&kp CAPSLOCK>;
-    };
-
   };
 
   keymap {
@@ -65,7 +55,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &mo NAV       &shift_caps       &kp SPC       &mo SYM
+                                                       &mo NAV       &sk LSHFT         &kp SPC       &mo SYM
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
