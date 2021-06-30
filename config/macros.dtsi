@@ -24,5 +24,3 @@ MACRO(app3, &kp LG(C))
 MACRO(bt1, &bt BT_SEL 0 &to BASE_IOS)
 MACRO(bt2, &bt BT_SEL 1 &to BASE)
 MACRO(bt3, &bt BT_SEL 2 &to BASE_IOS)
-
-MACRO(flash, &kp LG(LA(K)) &none &bootloader)
