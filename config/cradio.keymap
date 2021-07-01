@@ -41,6 +41,31 @@
 
   behaviors {
     #include "macros.dtsi"
+
+    dot_excl: dot_excl {
+      compatible = "zmk,behavior-mod-morph";
+      label = "dot_excl";
+      #binding-cells = <0>;
+      bindings = <&kp DOT>, <&kp EXCL>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    com_qmark: com_qmark {
+      compatible = "zmk,behavior-mod-morph";
+      label = "com_qmark";
+      #binding-cells = <0>;
+      bindings = <&kp COMMA>, <&kp QMARK>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    slash_at: slash_at {
+      compatible = "zmk,behavior-mod-morph";
+      label = "slash_at";
+      #binding-cells = <0>;
+      bindings = <&kp SLASH>, <&kp AT>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
   };
 
   keymap {
@@ -53,7 +78,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp A         &kp R         &kp S         &kp T         &kp G             &kp M         &kp N         &kp E         &kp I         &kp O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
+             &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &com_qmark    &dot_excl     &slash_at
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                        &mo NAV       &sk LSHFT         &kp SPC       &mo SYM
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
@@ -133,13 +158,13 @@
     sym_layer {
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &kp CARET     &kp LPAR      &kp RPAR      &kp EXCL      &kp DOLLAR        XXX           XXX           XXX           XXX           XXX
+             &kp TILDE     &kp LBKT      &kp RBKT      &kp LPAR      &kp BSLH          &kp CARET     &kp RPAR      &kp LT        &kp GT        &kp DOLLAR
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &kp AT        &kp LBKT      &kp RBKT      &kp SEMI      &kp HASH          XXX           &sk LGUI      &sk LCTRL     &sk LALT      XXX
+             &kp EQUAL     &kp MINUS     &kp UNDER     &kp COLON     &kp GRAVE         XXX           &sk LGUI      &sk LCTRL     &sk LALT      &kp STAR
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &kp STAR      &kp BSLH      &kp AMPS      &kp GRAVE     &kp PRCNT         XXX           XXX           XXX           &sk LSHFT     XXX
+             &kp PLUS      &kp LBRC      &kp RBRC      &kp SEMI      &kp HASH          XXX           XXX           &kp PIPE      &sk AMPS      &kp PERCENT
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &kp EQUAL     &kp MINUS         XXX           XXX
+                                                       ___           ___               ___           ___
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
