@@ -1,6 +1,9 @@
 # zmk-config
 
-My personal [ZMK firmware][3] configuration for my 34-key [Hypergolic][1] wireless keyboard.
+My personal [ZMK firmware][3] configuration for my current 34-key wireless keyboards:
+
+- [Sweep v2][12]
+- [Hypergolic][1]
 
 ## Keymap
 
@@ -11,22 +14,32 @@ See [`config/cradio.keymap`](config/cradio.keymap) for a visualisation of the cu
 * Symbols on base layer via one-handed combos (in [`combos.dtsi`](config/combos.dtsi))
 * Macro-combos for symbol n-grams such as `()`, `--` and `` ``` `` (in [`macros.dtsi`](config/macros.dtsi))
 
-The keymap is continuously evolving and I'm still slowly porting across some features from [my QMK keymap][7] (like the [steno-lite][11] functionality). I have recently moved away from dual function keys (such as [home row mods][9]) instead trying sticky keys, in an attempt to reduce the amount of keys that need to be held.
+I currently use the [`Makefile`](Makefile) to install a local ZMK environment via the [ZMK Docker images][10], apply my required patches/PRs, and then build and flash my `uf2` binaries to the nice!nano microcontrollers.
 
-I currently use the [`Makefile`](Makefile) to install a local ZMK environment via the [ZMK Docker images][10], apply my required patches/PRs, and then build and flash my `uf2` binaries to the nice!nano microcontrollers – all by running a single `make` command!
+## Keyboards
 
-## Keyboard
+### Sweep v2
+
+![Sweep wireless split keyboard](data/sweep-v2.jpg)
+
+* [Sweep v2][12] split keyboard PCB by @davidphilipbarr
+* [nice!nano][2] wireless BLE microcontrollers with OLEDs directly attached
+* splitkb.com Tenting Puck with Manfrotto MP3-BK pocket tripod
+* [Kailh Choc low profile key switches][6]
+  * White (50g, clicky)
+  * Lighter-weight 30g springs installed
+* [Chicago Stenographer keycaps][4] by @pseudoku
+
+### Hypergolic
 
 ![Hypergolic wireless split keyboard](data/hypergolic.jpg)
 
 * [Hypergolic][1] split keyboard PCB by @davidphilipbarr
 * [nice!nano][2] wireless BLE microcontrollers
-* [ZMK keyboard firmware][3]
 * [Kailh Choc low profile key switches][6]
+  * Red Pro (35g, linear)
   * gChoc on pinky columns (20g, linear)
-  * Red Pro everywhere else (35g, linear)
-* [Chicago Stenographer keycaps][4] by @pseudoku on the thumb keys
-* [MBK choc keycaps][5] everywhere else
+* [MBK choc keycaps][5]
 
 [1]: https://github.com/davidphilipbarr/hypergolic
 [2]: https://nicekeyboards.com/nice-nano/
@@ -39,3 +52,4 @@ I currently use the [`Makefile`](Makefile) to install a local ZMK environment vi
 [9]: https://precondition.github.io/home-row-mods
 [10]: https://github.com/zmkfirmware/zmk-docker
 [11]: https://noahfrederick.com/log/colemak-steno-hybrid-in-qmk
+[12]: https://github.com/davidphilipbarr/sweep
