@@ -9,11 +9,6 @@ My personal [ZMK firmware][3] configuration for my current 34-key wireless keybo
 
 See [`config/cradio.keymap`](config/cradio.keymap) for a visualisation of the current keymap layout.
 
-* [Colemak Mod-DH][8] layout on the base layer
-* Simple thumb-activated layers for a numpad and a navigation cluster; each with sticky modifiers on the home row
-* Symbols on base layer via one-handed combos (in [`combos.dtsi`](config/combos.dtsi))
-* Macro-combos for symbol n-grams such as `()`, `--` and `` ``` `` (in [`macros.dtsi`](config/macros.dtsi))
-
 I currently use the [`Makefile`](Makefile) to install a local ZMK environment via the [ZMK Docker images][10], apply my required patches/PRs, and then build and flash my `uf2` binaries to the nice!nano microcontrollers.
 
 ## Keyboards

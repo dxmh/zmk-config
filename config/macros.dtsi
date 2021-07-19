@@ -8,19 +8,6 @@
     bindings = <BINDINGS>; \
   };
 
-MACRO(double_dash, &kp MINUS &kp MINUS)
-MACRO(double_ampersand, &kp AMPERSAND &kp AMPERSAND &kp SPACE)
-MACRO(angle_brackets, &kp LESS_THAN &kp GREATER_THAN &kp LEFT)
-MACRO(brackets, &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT)
-MACRO(code_fence, &kp GRAVE &kp GRAVE &kp GRAVE)
-MACRO(double_pipe, &kp PIPE &kp PIPE &kp SPACE)
-MACRO(parentheses, &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT)
-MACRO(shell_command, &kp DOLLAR &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT)
-
-MACRO(app1, &kp LG(T))
-MACRO(app2, &kp LG(S))
-MACRO(app3, &kp LG(C))
-
 MACRO(bt1, &bt BT_SEL 0 &to BASE_IOS)
 MACRO(bt2, &bt BT_SEL 1 &to BASE)
 MACRO(bt3, &bt BT_SEL 2 &to BASE_IOS)
