@@ -38,14 +38,20 @@ sweep: zmk sweep_prototype
 sweep-peripheral: zmk sweep_prototype
 	$(call _build,nice_nano,cradio_right,Sweep-P)
 
+adux: zmk fresh
+	$(call _build,nice_nano,architeuthis_dux_left,Architeuthis\ Dux)
+
+adux-peripheral: zmk fresh
+	$(call _build,nice_nano,architeuthis_dux_right,A.\ Dux-P)
+
 all: $(builds)
 
 flash:
 	@ printf "\nWaiting for a nice!nano to appear\n"
 	@ while [ ! -b ${nicenano_device} ]; do sleep 1; printf "."; done
 	@ findmnt ${nicenano_device} || udisksctl mount --block-device ${nicenano_device}
-	@ $(call _flash,8AA1DA68593FABC1,Hypergolic)
-	@ $(call _flash,21CA6AAAD49DF81A,Hypergolic-P)
+	@ $(call _flash,8AA1DA68593FABC1,Architeuthis\ Dux)
+	@ $(call _flash,21CA6AAAD49DF81A,A.\ Dux-P)
 	@ $(call _flash,D33E2CFB15C7D816,Sweep)
 	@ $(call _flash,45C483E59AD308DE,Sweep-P)
 
