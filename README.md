@@ -7,7 +7,9 @@ My personal [ZMK firmware][3] configuration for my current 34-key wireless keybo
 
 ## Keymap
 
-See [`config/34keys.keymap`](config/34keys.keymap) for a visualisation of the current keymap layout.
+![](https://raw.githubusercontent.com/dxmh/keymap/master/keymap.svg)
+
+The actual keymap resides in [`config/34keys.keymap`](config/34keys.keymap).
 
 I currently use the [`Makefile`](Makefile) to install a local ZMK environment via the [ZMK Docker images][10], apply my required patches/PRs, and then build and flash my `uf2` binaries to the nice!nano microcontrollers.
 
