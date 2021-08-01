@@ -22,4 +22,3 @@
 #define iWORD_BS LA(BSPC)
 #define iWORD_L LA(LEFT)
 #define iWORD_R LA(RIGHT)
-
