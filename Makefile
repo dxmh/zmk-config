@@ -5,7 +5,7 @@ uf2=${PWD}/uf2
 config=${PWD}/config
 nicenano_device=/dev/disk/by-label/NICENANO
 nicenano_mount=/media/${USER}/NICENANO
-zmk_image=zmkfirmware/zmk-dev-arm:2.4
+zmk_image=zmkfirmware/zmk-dev-arm:2.5
 docker_run=docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" \
 	-v "${config}:/zmk-config" -v "${uf2}:/uf2" ${zmk_image}
 builds=hypergolic hypergolic-peripheral sweep sweep-peripheral
