@@ -17,8 +17,8 @@
 
 #define iEND LG(RIGHT)
 #define iHOME LG(LEFT)
-#define iNEXT LS(LG(RBKT))
-#define iPREV LS(LG(LBKT))
+#define iNEXT LC(TAB)
+#define iPREV LS(LC(TAB))
 #define iWORD_BS LA(BSPC)
 #define iWORD_L LA(LEFT)
 #define iWORD_R LA(RIGHT)
