@@ -22,3 +22,7 @@
 #define iWORD_BS LA(BSPC)
 #define iWORD_L LA(LEFT)
 #define iWORD_R LA(RIGHT)
+
+// Apple's "Globe key" is mapped to Caps Lock at the operating system level
+// https://github.com/zmkfirmware/zmk/issues/947
+#define GLOBE CAPSLOCK
