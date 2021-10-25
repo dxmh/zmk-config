@@ -1,4 +1,4 @@
-.PHONY: default all clean flash $(builds)
+.PHONY: default all flash $(builds)
 
 SHELL:=/bin/bash
 zmk=${PWD}/zmk
@@ -9,7 +9,7 @@ nicenano_mount=/media/${USER}/NICENANO
 zmk_image=zmkfirmware/zmk-dev-arm:2.5
 docker_run=docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" \
 	-v "${config}:/zmk-config" -v "${uf2}:/uf2" ${zmk_image}
-builds=hypergolic hypergolic-peripheral sweep sweep-peripheral
+builds=hypergolic hypergolic-peripheral adux adux-peripheral
 log=${PWD}/build.log
 
 define _build
@@ -26,24 +26,18 @@ define _flash
 		&& cp -av "${uf2}/$(2).uf2" "${nicenano_mount}/" || true
 endef
 
-default: sweep
+default: adux
 
-hypergolic: zmk fresh
+hypergolic: zmk
 	$(call _build,nice_nano,cradio_left,Hypergolic)
 
-hypergolic-peripheral: zmk fresh
+hypergolic-peripheral: zmk
 	$(call _build,nice_nano,cradio_right,Hypergolic-P)
 
-sweep: zmk sweep_prototype
-	$(call _build,nice_nano,cradio_left,Sweep)
-
-sweep-peripheral: zmk sweep_prototype
-	$(call _build,nice_nano,cradio_right,Sweep-P)
-
-adux: zmk fresh
+adux: zmk
 	$(call _build,nice_nano,a_dux_left,Architeuthis\ Dux)
 
-adux-peripheral: zmk fresh
+adux-peripheral: zmk
 	$(call _build,nice_nano,a_dux_right,A.\ Dux-P)
 
 all: $(builds)
@@ -54,8 +48,8 @@ flash:
 	@ findmnt ${nicenano_device} || udisksctl mount --block-device ${nicenano_device}
 	@ $(call _flash,8AA1DA68593FABC1,Architeuthis Dux)
 	@ $(call _flash,21CA6AAAD49DF81A,A. Dux-P)
-	@ $(call _flash,D33E2CFB15C7D816,Sweep)
-	@ $(call _flash,45C483E59AD308DE,Sweep-P)
+	@ $(call _flash,D33E2CFB15C7D816,Hypergolic)
+	@ $(call _flash,45C483E59AD308DE,Hypergolic-P)
 
 zmk:
 	${docker_run} sh -c '\
@@ -64,16 +58,6 @@ zmk:
 		git merge okke-formsa/macros --no-edit; \
 		west init -l app; \
 		west update'
-
-fresh:
-	${docker_run} git checkout --force --quiet
-
-# Fix thumb keys on this particular Sweep PCB
-sweep_prototype: fresh
-	${docker_run} sed -i \
-		-e 's/RC(0,15) RC(0,16)/RC(0,16) RC(0,15)/' \
-		-e 's/RC(0,33) RC(0,32)/RC(0,32) RC(0,33)/' \
-		/zmk/app/boards/shields/cradio/cradio.dtsi
 
 # Count the amount of combos per key and update the value in config files
 combo_count:
