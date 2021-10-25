@@ -10,7 +10,7 @@
 };
 
 &kscan0 {
-  debounce-period = <12>;
+  debounce-period = <13>;
 };
 
 / {
