@@ -1,5 +1,6 @@
 .PHONY: default all clean flash $(builds)
 
+SHELL:=/bin/bash
 zmk=${PWD}/zmk
 uf2=${PWD}/uf2
 config=${PWD}/config
@@ -9,9 +10,10 @@ zmk_image=zmkfirmware/zmk-dev-arm:2.5
 docker_run=docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" \
 	-v "${config}:/zmk-config" -v "${uf2}:/uf2" ${zmk_image}
 builds=hypergolic hypergolic-peripheral sweep sweep-peripheral
+log=${PWD}/build.log
 
 define _build
-	${docker_run} sh -c '\
+	${docker_run} 2> >(tee ${log} >&2) sh -c '\
 		west build --pristine --board "$(1)" app -- \
 			-DSHIELD="$(2)" \
 			-DZMK_CONFIG="/zmk-config" \
@@ -81,6 +83,12 @@ combo_count:
 
 test:
 	${docker_run} west test
+
+# Pinpoint the cause of the most recent build failure by opening the
+# nice_nano.dts.pre.tmp file at the line and column that caused the error
+show:
+	$(shell sed -nE 's|.+(nice_nano.dts.pre.tmp):([0-9]+)\.([0-9]+)-.+|\
+		vim -c "call cursor(+\2, \3)" -c "set cursorline cursorcolumn" zmk/build/zephyr/\1|p' ${log})
 
 clean:
 	sudo rm -rf "${uf2}" "${zmk}"
