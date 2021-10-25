@@ -73,6 +73,12 @@ sweep_prototype: fresh
 		-e 's/RC(0,33) RC(0,32)/RC(0,32) RC(0,33)/' \
 		/zmk/app/boards/shields/cradio/cradio.dtsi
 
+# Count the amount of combos per key and update the value in config files
+combo_count:
+	count=$$(grep -Eo '[0-9]+' config/combos.dtsi \
+		| sort | uniq -c | sort -nr | awk 'NR==1{ print $$1 }'); \
+	sed -Ei "/CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY/s/=.+/=$$count/" config/*.conf
+
 test:
 	${docker_run} west test
 
