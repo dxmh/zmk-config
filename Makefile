@@ -39,10 +39,10 @@ sweep-peripheral: zmk sweep_prototype
 	$(call _build,nice_nano,cradio_right,Sweep-P)
 
 adux: zmk fresh
-	$(call _build,nice_nano,architeuthis_dux_left,Architeuthis\ Dux)
+	$(call _build,nice_nano,a_dux_left,Architeuthis\ Dux)
 
 adux-peripheral: zmk fresh
-	$(call _build,nice_nano,architeuthis_dux_right,A.\ Dux-P)
+	$(call _build,nice_nano,a_dux_right,A.\ Dux-P)
 
 all: $(builds)
 
