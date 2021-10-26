@@ -3,10 +3,8 @@
 
 #define BASE 0
 #define NAV 1
-#define SYM 2
-#define ADJ 3
-#define BASE_IOS 4
-#define NAV_IOS 5
+#define NUM 2
+#define BASE_IOS 3
 
 #define NEXT LC(PG_DN)
 #define PREV LC(PG_UP)

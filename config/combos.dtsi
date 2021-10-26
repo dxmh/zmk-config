@@ -16,6 +16,16 @@ compatible = "zmk,combos";
     layers = <LAYERS>; \
   };
 
+/* Brackets */
+COMBO(left_brace, &kp LEFT_BRACE, 3 13, BASE BASE_IOS)
+COMBO(right_brace, &kp RIGHT_BRACE, 6 16, BASE BASE_IOS)
+COMBO(left_bracket, &kp LEFT_BRACKET, 2 12, BASE BASE_IOS)
+COMBO(right_bracket, &kp RIGHT_BRACKET, 7 17, BASE BASE_IOS)
+COMBO(left_parenthesis, &kp LEFT_PARENTHESIS, 11 21, BASE BASE_IOS)
+COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 18 28, BASE BASE_IOS)
+COMBO(less_than, &kp LESS_THAN, 12 22, BASE BASE_IOS)
+COMBO(greater_than, &kp GREATER_THAN, 18 28, BASE BASE_IOS)
+
 COMBO(undo, &kp LC(Z), 20 21, BASE)
 COMBO(cut, &kp LC(X), 21 23, BASE)
 COMBO(copy, &kp LC(C), 21 22, BASE)
