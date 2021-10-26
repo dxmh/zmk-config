@@ -1,1 +1,2 @@
+#include "oled.dtsi"
 #include "34keys.keymap"
