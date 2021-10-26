@@ -39,11 +39,6 @@ COMBO(paste_ios, &kp LG(V), 21 22 23, BASE_IOS)
 COMBO(select_all_ios, &kp LG(A), 20 23, BASE_IOS)
 
 COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE_IOS)
-
-COMBO(app1, &kp LG(T), 3 13, BASE BASE_IOS)
-COMBO(app2, &kp LG(S), 2 12, BASE BASE_IOS)
-COMBO(app3, &kp LG(C), 1 11, BASE BASE_IOS)
-COMBO(app_overview, &kp LG(SPACE), 11 12 13, BASE BASE_IOS)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
 COMBO(mic_mute_right, &kp LG(BACKSLASH), 16 26, BASE)
 
