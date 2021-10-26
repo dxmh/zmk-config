@@ -40,6 +40,11 @@ COMBO(copy_ios, &kp LG(C), 21 22, BASE_IOS)
 COMBO(paste_ios, &kp LG(V), 21 22 23, BASE_IOS)
 COMBO(select_all_ios, &kp LG(A), 20 23, BASE_IOS)
 
+/* App switching */
+COMBO(app1, &macro_app1, 32 16, BASE_IOS)
+COMBO(app2, &macro_app2, 32 17, BASE_IOS)
+COMBO(app3, &macro_app3, 32 18, BASE_IOS)
+
 /* System */
 COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE_IOS)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)

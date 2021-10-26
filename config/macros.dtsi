@@ -11,3 +11,11 @@
 MACRO(bt1, &bt BT_SEL 0 &to BASE_IOS)
 MACRO(bt2, &bt BT_SEL 1 &to BASE)
 MACRO(bt3, &bt BT_SEL 2 &to BASE_IOS)
+
+// Focus the first icon in the iPadOS dock:
+#define FOCUS_DOCK &sk GLOBE &kp A &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT
+
+// Then select the desired app:
+MACRO(app1, FOCUS_DOCK &kp ENTER)
+MACRO(app2, FOCUS_DOCK &kp RIGHT &kp ENTER)
+MACRO(app3, FOCUS_DOCK &kp RIGHT &kp RIGHT &kp ENTER)
