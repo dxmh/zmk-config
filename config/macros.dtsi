@@ -1,5 +1,5 @@
+// Macro macro:
 #define str(s) #s
-
 #define MACRO(NAME, BINDINGS) \
   macro_##NAME: macro_##NAME { \
     compatible = "zmk,behavior-macro"; \
@@ -8,6 +8,7 @@
     bindings = <BINDINGS>; \
   };
 
+// Switch bluetooth profile and base layer at the same time:
 MACRO(bt1, &bt BT_SEL 0 &to BASE_IOS)
 MACRO(bt2, &bt BT_SEL 1 &to BASE)
 MACRO(bt3, &bt BT_SEL 2 &to BASE_IOS)
