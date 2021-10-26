@@ -26,22 +26,26 @@ COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 18 28, BASE BASE_IOS)
 COMBO(less_than, &kp LESS_THAN, 12 22, BASE BASE_IOS)
 COMBO(greater_than, &kp GREATER_THAN, 18 28, BASE BASE_IOS)
 
+/* Text processing (Linux) */
 COMBO(undo, &kp LC(Z), 20 21, BASE)
 COMBO(cut, &kp LC(X), 21 23, BASE)
 COMBO(copy, &kp LC(C), 21 22, BASE)
 COMBO(paste, &kp LC(V), 21 22 23, BASE)
 COMBO(select_all, &kp LC(A), 20 23, BASE)
 
+/* Text processing (Mac) */
 COMBO(undo_ios, &kp LG(Z), 20 21, BASE_IOS)
 COMBO(cut_ios, &kp LG(X), 21 23, BASE_IOS)
 COMBO(copy_ios, &kp LG(C), 21 22, BASE_IOS)
 COMBO(paste_ios, &kp LG(V), 21 22 23, BASE_IOS)
 COMBO(select_all_ios, &kp LG(A), 20 23, BASE_IOS)
 
+/* System */
 COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE_IOS)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
 COMBO(mic_mute_right, &kp LG(BACKSLASH), 16 26, BASE)
 
+/* Keyboard */
 COMBO(reset, &reset, 4 5 14 15, BASE BASE_IOS)
 COMBO(bootloader, &bootloader, 14 15 24 25, BASE BASE_IOS)
 COMBO(bt1, &macro_bt1, 26 27, BASE BASE_IOS)
