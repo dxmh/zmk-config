@@ -2,3 +2,5 @@ zmk
 uf2
 todo
 build.log
+format.sh
+settings_reset.uf2
