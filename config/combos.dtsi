@@ -17,42 +17,35 @@ compatible = "zmk,combos";
   };
 
 /* Brackets */
-COMBO(left_brace, &kp LEFT_BRACE, 3 13, BASE BASE_IOS)
-COMBO(right_brace, &kp RIGHT_BRACE, 6 16, BASE BASE_IOS)
-COMBO(left_bracket, &kp LEFT_BRACKET, 2 12, BASE BASE_IOS)
-COMBO(right_bracket, &kp RIGHT_BRACKET, 7 17, BASE BASE_IOS)
-COMBO(left_parenthesis, &kp LEFT_PARENTHESIS, 11 21, BASE BASE_IOS)
-COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 18 28, BASE BASE_IOS)
-COMBO(less_than, &kp LESS_THAN, 12 22, BASE BASE_IOS)
-COMBO(greater_than, &kp GREATER_THAN, 18 28, BASE BASE_IOS)
+COMBO(left_brace, &kp LEFT_BRACE, 3 13, BASE)
+COMBO(right_brace, &kp RIGHT_BRACE, 6 16, BASE)
+COMBO(left_bracket, &kp LEFT_BRACKET, 2 12, BASE)
+COMBO(right_bracket, &kp RIGHT_BRACKET, 7 17, BASE)
+COMBO(left_parenthesis, &kp LEFT_PARENTHESIS, 11 21, BASE)
+COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 18 28, BASE)
+COMBO(less_than, &kp LESS_THAN, 12 22, BASE)
+COMBO(greater_than, &kp GREATER_THAN, 18 28, BASE)
 
-/* Text processing (Linux) */
-COMBO(undo, &kp LC(Z), 20 21, BASE)
-COMBO(cut, &kp LC(X), 21 23, BASE)
-COMBO(copy, &kp LC(C), 21 22, BASE)
-COMBO(paste, &kp LC(V), 21 22 23, BASE)
-COMBO(select_all, &kp LC(A), 20 23, BASE)
-
-/* Text processing (Mac) */
-COMBO(undo_ios, &kp LG(Z), 20 21, BASE_IOS)
-COMBO(cut_ios, &kp LG(X), 21 23, BASE_IOS)
-COMBO(copy_ios, &kp LG(C), 21 22, BASE_IOS)
-COMBO(paste_ios, &kp LG(V), 21 22 23, BASE_IOS)
-COMBO(select_all_ios, &kp LG(A), 20 23, BASE_IOS)
+/* Text processing */
+COMBO(undo, &kp LG(Z), 20 21, BASE)
+COMBO(cut, &kp LG(X), 21 23, BASE)
+COMBO(copy, &kp LG(C), 21 22, BASE)
+COMBO(paste, &kp LG(V), 21 22 23, BASE)
+COMBO(select_all, &kp LG(A), 20 23, BASE)
 
 /* App switching */
-COMBO(app1, &macro_app1, 32 16, BASE_IOS)
-COMBO(app2, &macro_app2, 32 17, BASE_IOS)
-COMBO(app3, &macro_app3, 32 18, BASE_IOS)
+COMBO(app1, &macro_app1, 32 16, BASE)
+COMBO(app2, &macro_app2, 32 17, BASE)
+COMBO(app3, &macro_app3, 32 18, BASE)
 
 /* System */
-COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE_IOS)
+COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
 COMBO(mic_mute_right, &kp LG(BACKSLASH), 16 26, BASE)
 
 /* Keyboard */
-COMBO(reset, &reset, 4 5 14 15, BASE BASE_IOS)
-COMBO(bootloader, &bootloader, 14 15 24 25, BASE BASE_IOS)
-COMBO(bt1, &macro_bt1, 26 27, BASE BASE_IOS)
-COMBO(bt2, &macro_bt2, 2 3, BASE BASE_IOS)
-COMBO(bttog, &out OUT_TOG, 11 12 13, BASE BASE_IOS)
+COMBO(reset, &reset, 4 5 14 15, BASE)
+COMBO(bootloader, &bootloader, 14 15 24 25, BASE)
+COMBO(bt0, &bt BT_SEL 0, 26 27, BASE)
+COMBO(bt1, &bt BT_SEL 1, 2 3, BASE)
+COMBO(bttog, &out OUT_TOG, 11 12 13, BASE)
