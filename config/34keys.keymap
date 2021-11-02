@@ -20,6 +20,26 @@
 
   behaviors {
     #include "macros.dtsi"
+    lhm: left_homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LEFT_HOMEROW_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick_tap_ms = <200>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = KEYPOS_RIGHT_HALF;
+    };
+    rhm: right_homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "RIGHT_HOMEROW_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick_tap_ms = <200>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = KEYPOS_LEFT_HALF;
+    };
     skq: sticky_key_quick_release {
       compatible = "zmk,behavior-sticky-key";
       label = "STICKY_KEY_QUICK_RELEASE";
@@ -37,9 +57,9 @@
       label = "HXY";
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT
+             &kp Q         &kp W         &lhm LCTRL F  &kp P         &kp B             &kp J         &kp L         &rhm LCTRL U  &kp Y         &kp SQT
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &kp A         &kp R         &kp S         &kp T         &kp G             &kp M         &kp N         &kp E         &kp I         &kp O
+             &kp A         &lhm LGUI R   &lhm LALT S   &kp T         &kp G             &kp M         &kp N         &rhm LALT E   &rhm LGUI I   &kp O
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
