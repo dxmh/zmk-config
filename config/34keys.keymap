@@ -20,6 +20,7 @@
 
   behaviors {
     #include "macros.dtsi"
+    #include "mod_morphs.dtsi"
     skq: sticky_key_quick_release {
       compatible = "zmk,behavior-sticky-key";
       label = "STICKY_KEY_QUICK_RELEASE";
@@ -54,9 +55,9 @@
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
              XXX           &skq GLOBE    &skq LCTRL    XXX           XXX               XXX           &kp LS(TAB)   &kp TAB       &kp ESC       XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX           &skq LSHIFT   &skq LALT     &skq LGUI     XXX               XXX           &kp BSPC      &kp UP        &kp ENTER     &kp DEL
+             XXX           &skq LSHIFT   &skq LALT     &skq LGUI     XXX               XXX           &mm_bspc      &mm_up        &kp ENTER     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX           XXX           XXX           XXX           XXX               XXX           &kp LEFT      &kp DOWN      &kp RIGHT     XXX
+             XXX           XXX           XXX           XXX           XXX               XXX           &mm_left      &mm_down      &mm_right     XXX
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                        ___           ___               ___           ___
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
