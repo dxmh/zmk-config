@@ -39,6 +39,7 @@ COMBO(app2, &macro_app2, 32 17, BASE)
 COMBO(app3, &macro_app3, 32 18, BASE)
 
 /* System */
+COMBO(power, &kp C_POWER, 4 5, BASE)
 COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
 COMBO(mic_mute_right, &kp LG(BACKSLASH), 16 26, BASE)

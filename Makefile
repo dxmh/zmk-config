@@ -1,4 +1,4 @@
-.PHONY: default all flash $(builds)
+.PHONY: default all flash show $(builds)
 
 SHELL:=/bin/bash
 zmk=${PWD}/zmk
@@ -55,7 +55,9 @@ zmk:
 	${docker_run} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
 		git remote add -ft macros okke-formsa https://github.com/okke-formsma/zmk; \
+		git remote add -ft modmorph aumuell https://github.com/aumuell/zmk; \
 		git merge okke-formsa/macros --no-edit; \
+		git merge aumuell/modmorph --no-edit; \
 		west init -l app; \
 		west update'
 
