@@ -66,11 +66,20 @@ mm_right_morphed: mm_right_morphed {
 
 // backspace
 // alt+backspace = ctrl+backspace (delete word)
+// super+backspace = delete to beginning of line
 mm_bspc: mm_bspc {
   compatible = "zmk,behavior-mod-morph";
   label = "mm_bspc";
   #binding-cells = <0>;
-  bindings = <&kp BSPC>, <&kp LC(BSPC)>;
-  mods = <(MOD_LALT)>;
-  masked_mods = <(MOD_LALT)>; // don't send held modifier
+  bindings = <&kp BSPC>, <&mm_bspc_morphed>;
+  mods = <(MOD_LGUI|MOD_LALT)>; // morph on GUI or ALT...
+  masked_mods = <(MOD_LALT)>;   // but don't send ALT to the next mod-morph
+};
+mm_bspc_morphed: mm_bspc_morphed {
+  compatible = "zmk,behavior-mod-morph";
+  label = "mm_bspc_morphed";
+  #binding-cells = <0>;
+  bindings = <&kp LC(BSPC)>, <&macro_bspc_line>;
+  mods = <(MOD_LGUI)>;
+  masked_mods = <(MOD_LGUI)>; // don't send held modifier
 };

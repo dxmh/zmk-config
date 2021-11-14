@@ -15,3 +15,6 @@
 MACRO(app1, FOCUS_DOCK &kp ENTER)
 MACRO(app2, FOCUS_DOCK &kp RIGHT &kp ENTER)
 MACRO(app3, FOCUS_DOCK &kp RIGHT &kp RIGHT &kp ENTER)
+
+// Delete to beginning of line (like cmd+backspace on macOS)
+MACRO(bspc_line, &kp LS(HOME) &kp BSPC)
