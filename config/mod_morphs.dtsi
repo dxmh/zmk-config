@@ -25,7 +25,7 @@ mm_down: mm_down {
 };
 
 // left
-// gui+left = end
+// gui+left = home
 // alt+left = ctrl+left (word left)
 mm_left: mm_left {
   compatible = "zmk,behavior-mod-morph";
