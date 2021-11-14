@@ -43,6 +43,8 @@ COMBO(power, &kp C_POWER, 4 5, BASE)
 COMBO(ios_keyboard_toggle, &kp C_EJECT, 5 15, BASE)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
 COMBO(mic_mute_right, &kp LG(BACKSLASH), 16 26, BASE)
+COMBO(volup, &kp C_VOL_UP, 7 17, NAV)
+COMBO(voldown, &kp C_VOL_DN, 17 27, NAV)
 
 /* Keyboard */
 COMBO(reset, &reset, 4 5 14 15, BASE)
