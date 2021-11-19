@@ -18,3 +18,7 @@ MACRO(app3, FOCUS_DOCK &kp RIGHT &kp RIGHT &kp ENTER)
 
 // Delete to beginning of line (like cmd+backspace on macOS)
 MACRO(bspc_line, &kp LS(HOME) &kp BSPC)
+
+// Switch default keymaps with hosts
+MACRO(bt_0, &bt BT_SEL 0 &to BASE_MAC)
+MACRO(bt_1, &bt BT_SEL 1 &to BASE_LINUX)
