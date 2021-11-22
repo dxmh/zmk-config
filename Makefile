@@ -26,6 +26,11 @@ define _flash
 		&& cp -av "${uf2}/$(2).uf2" "${nicenano_mount}/" || true
 endef
 
+define _merge
+	git remote add -ft $(2) $(1) https://github.com/$(1)/zmk; \
+	git merge $(1)/$(2) --no-edit;
+endef
+
 default: adux
 
 hypergolic: zmk
@@ -54,10 +59,8 @@ flash:
 zmk:
 	${docker_run} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
-		git remote add -ft macros okke-formsa https://github.com/okke-formsma/zmk; \
-		git remote add -ft modmorph aumuell https://github.com/aumuell/zmk; \
-		git merge okke-formsa/macros --no-edit; \
-		git merge aumuell/modmorph --no-edit; \
+		$(call _merge,okke-formsma,macros) \
+		$(call _merge,aumuell,modmorph) \
 		west init -l app; \
 		west update'
 
