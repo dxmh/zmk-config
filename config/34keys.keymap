@@ -29,6 +29,14 @@
       release-after-ms = <1000>;
       quick-release;
     };
+    shift_caps: shift_caps {
+      compatible = "zmk,behavior-tap-dance";
+      label = "SHIFT_CAPS";
+      #binding-cells = <0>;
+      tapping_term_ms = <1000>;
+      bindings = <&skq LSHIFT>, <&caps_word>;
+    };
+
   };
 
   keymap {
@@ -44,7 +52,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &mo NAV_MAC   &skq LSHIFT       &mm_space     &mo NUM
+                                                       &mo NAV_MAC   &shift_caps       &mm_space     &mo NUM
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
