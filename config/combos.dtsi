@@ -26,17 +26,29 @@ COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 18 28, BASE)
 COMBO(less_than, &kp LESS_THAN, 12 22, BASE)
 COMBO(greater_than, &kp GREATER_THAN, 18 28, BASE)
 
-/* Text processing */
-COMBO(undo, &kp LG(Z), 20 21, BASE)
-COMBO(cut, &kp LG(X), 21 23, BASE)
-COMBO(copy, &kp LG(C), 21 22, BASE)
-COMBO(paste, &kp LG(V), 21 22 23, BASE)
-COMBO(select_all, &kp LG(A), 20 23, BASE)
+/* Text processing (Mac) */
+COMBO(undo_mac, &kp LG(Z), 20 21, BASE_MAC)
+COMBO(cut_mac, &kp LG(X), 21 23, BASE_MAC)
+COMBO(copy_mac, &kp LG(C), 21 22, BASE_MAC)
+COMBO(paste_mac, &kp LG(V), 21 22 23, BASE_MAC)
+COMBO(select_all_mac, &kp LG(A), 20 23, BASE_MAC)
 
-/* App switching */
-COMBO(app1, &macro_app1, 32 16, BASE)
-COMBO(app2, &macro_app2, 32 17, BASE)
-COMBO(app3, &macro_app3, 32 18, BASE)
+/* Text processing (Linux) */
+COMBO(undo_linux, &kp LC(Z), 20 21, BASE_LINUX)
+COMBO(cut_linux, &kp LC(X), 21 23, BASE_LINUX)
+COMBO(copy_linux, &kp LC(C), 21 22, BASE_LINUX)
+COMBO(paste_linux, &kp LC(V), 21 22 23, BASE_LINUX)
+COMBO(select_all_linux, &kp LC(A), 20 23, BASE_LINUX)
+
+/* App switching (Mac) */
+COMBO(app1_mac, &macro_app1, 32 16, BASE_MAC)
+COMBO(app2_mac, &macro_app2, 32 17, BASE_MAC)
+COMBO(app3_mac, &macro_app3, 32 18, BASE_MAC)
+
+/* App switching (Linux) */
+COMBO(app1_linux, &kp LG(S), 32 16, BASE_LINUX)
+COMBO(app2_linux, &kp LG(T), 32 17, BASE_LINUX)
+COMBO(app3_linux, &kp LG(C), 32 18, BASE_LINUX)
 
 /* System */
 COMBO(power, &kp C_POWER, 4 5, BASE)
