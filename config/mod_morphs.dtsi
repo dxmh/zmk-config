@@ -79,7 +79,7 @@ mm_bspc_morphed: mm_bspc_morphed {
   compatible = "zmk,behavior-mod-morph";
   label = "mm_bspc_morphed";
   #binding-cells = <0>;
-  bindings = <&kp LC(BSPC)>, <&macro_bspc_line>;
+  bindings = <&kp LC(BSPC)>, <&kp LC(LS(BSPC))>;
   mods = <(MOD_LGUI)>;
   masked_mods = <(MOD_LGUI)>; // don't send held modifier
 };
