@@ -19,8 +19,10 @@
   };
 
   behaviors {
+
     #include "macros.dtsi"
     #include "mod_morphs.dtsi"
+
     skq: sticky_key_quick_release {
       compatible = "zmk,behavior-sticky-key";
       label = "STICKY_KEY_QUICK_RELEASE";
@@ -29,6 +31,7 @@
       release-after-ms = <1000>;
       quick-release;
     };
+
     shift_caps: shift_caps {
       compatible = "zmk,behavior-tap-dance";
       label = "SHIFT_CAPS";
