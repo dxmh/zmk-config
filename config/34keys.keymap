@@ -40,6 +40,18 @@
       bindings = <&skq LSHIFT>, <&caps_word>;
     };
 
+    // Use hold-tap to enable rolling sticky keys:
+    // https://github.com/zmkfirmware/zmk/issues/829#issuecomment-979864774
+    nk: not_so_sticky_key {
+      compatible = "zmk,behavior-hold-tap";
+      label = "NOT_SO_STICKY_KEY";
+      #binding-cells = <2>;
+      tapping_term_ms = <200>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&sk>;
+    };
+    #define SK(KEY) &nk KEY KEY
+
   };
 
   keymap {
@@ -79,9 +91,9 @@
       label = "NAV (MAC)";
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             XXX           XXX           &skq LCTRL    &skq GLOBE    XXX               XXX           &kp LS(TAB)   &kp TAB       &kp ESC       XXX
+             XXX           XXX           SK(LCTRL)     SK(GLOBE)     XXX               XXX           &kp LS(TAB)   &kp TAB       &kp ESC       XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX           &skq LSHIFT   &skq LALT     &skq LGUI     XXX               XXX           &kp BSPC      &kp UP        &kp ENTER     &kp DEL
+             XXX           SK(LSHIFT)    SK(LALT)      SK(LGUI)      XXX               XXX           &kp BSPC      &kp UP        &kp ENTER     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX           XXX           XXX           XXX           XXX               XXX           &kp LEFT      &kp DOWN      &kp RIGHT     XXX
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
@@ -94,9 +106,9 @@
       label = "NAV (LINUX)";
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             XXX           XXX           &skq LCTRL    &skq GLOBE    XXX               XXX           &kp LS(TAB)   &kp TAB       &kp ESC       XXX
+             XXX           XXX           SK(LCTRL)     SK(GLOBE)     XXX               XXX           &kp LS(TAB)   &kp TAB       &kp ESC       XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             XXX           &skq LSHIFT   &skq LALT     &skq LGUI     XXX               XXX           &mm_bspc      &mm_up        &kp ENTER     &kp DEL
+             XXX           SK(LSHIFT)    SK(LALT)      SK(LGUI)      XXX               XXX           &mm_bspc      &mm_up        &kp ENTER     &kp DEL
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              XXX           XXX           XXX           XXX           XXX               XXX           &mm_left      &mm_down      &mm_right     XXX
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
@@ -109,9 +121,9 @@
       label = "NUM";
       bindings = <
         // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-             &kp GRAVE     &kp N7        &kp N8        &kp N9        &kp EQUAL         XXX           &skq GLOBE    &skq LCTRL    XXX           XXX
+             &kp GRAVE     &kp N7        &kp N8        &kp N9        &kp EQUAL         XXX           SK(GLOBE)     SK(LCTRL)     XXX           XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-             &kp N0        &kp N4        &kp N5        &kp N6        &kp MINUS         XXX           &skq LGUI     &skq LALT     &skq LSHIFT   XXX
+             &kp N0        &kp N4        &kp N5        &kp N6        &kp MINUS         XXX           SK(LGUI)      SK(LALT)      SK(LSHIFT)    XXX
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp BSLH      &kp N1        &kp N2        &kp N3        &kp SEMI          XXX           XXX           XXX           XXX           XXX
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
