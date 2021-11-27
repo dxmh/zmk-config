@@ -83,3 +83,12 @@ mm_bspc_morphed: mm_bspc_morphed {
   mods = <(MOD_LGUI)>;
   masked_mods = <(MOD_LGUI)>; // don't send held modifier
 };
+
+// mods+escape = F24 (useful to "cancel" active sticky-keys)
+mm_esc: mm_esc {
+  compatible = "zmk,behavior-mod-morph";
+  label = "mm_esc";
+  #binding-cells = <0>;
+  bindings = <&kp ESCAPE>, <&kp F24>;
+  mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+};
