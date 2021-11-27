@@ -11,6 +11,7 @@
 #define NAV NAV_MAC NAV_LINUX
 
 #define SK(KEY) &nk KEY KEY
+#define MO(LAYER) &mo_tap LAYER F24
 
 // Apple's "Globe key" is mapped to Caps Lock at the operating system level
 // https://github.com/zmkfirmware/zmk/issues/947
