@@ -50,7 +50,6 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&sk>;
     };
-    #define SK(KEY) &nk KEY KEY
 
   };
 
