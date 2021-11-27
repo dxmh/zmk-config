@@ -83,13 +83,3 @@ mm_bspc_morphed: mm_bspc_morphed {
   mods = <(MOD_LGUI)>;
   masked_mods = <(MOD_LGUI)>; // don't send held modifier
 };
-
-// shift + space + escape
-mm_space: mm_space {
-  compatible = "zmk,behavior-mod-morph";
-  label = "mm_space";
-  #binding-cells = <0>;
-  bindings = <&kp SPACE>, <&kp ESCAPE>;
-  mods = <(MOD_LSFT)>;
-  masked_mods = <(MOD_LSFT)>; // don't send held modifier
-};
