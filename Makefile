@@ -13,6 +13,7 @@ builds=hypergolic hypergolic-peripheral adux adux-peripheral
 log=${PWD}/build.log
 
 define _build
+	make combo_count
 	${docker_run} 2> >(tee ${log} >&2) sh -c '\
 		west build --pristine --board "$(1)" app -- \
 			-DSHIELD="$(2)" \
