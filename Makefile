@@ -7,7 +7,7 @@ config=${PWD}/config
 nicenano_device=/dev/disk/by-label/NICENANO
 nicenano_mount=/media/${USER}/NICENANO
 zmk_image=zmkfirmware/zmk-dev-arm:2.5
-docker_run=docker run --rm -h make.zmk -w /zmk -v "${zmk}:/zmk" \
+docker_run=docker run --rm -it -h make.zmk -w /zmk -v "${zmk}:/zmk" \
 	-v "${config}:/zmk-config" -v "${uf2}:/uf2" ${zmk_image}
 builds=hypergolic hypergolic-peripheral adux adux-peripheral
 log=${PWD}/build.log
@@ -65,6 +65,9 @@ zmk:
 		$(call _merge,kurtis-lew,pr_tap_dance_june) \
 		west init -l app; \
 		west update'
+
+shell:
+	${docker_run} bash
 
 # Count the amount of combos per key and update the value in config files
 combo_count:
