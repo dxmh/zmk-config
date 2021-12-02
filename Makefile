@@ -60,6 +60,7 @@ flash:
 zmk:
 	${docker_run} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
+		git checkout c4ad3bc5dcfdf01f86b7538b42b7546487a694b0; \
 		$(call _merge,okke-formsma,macros) \
 		$(call _merge,aumuell,modmorph) \
 		west init -l app; \
