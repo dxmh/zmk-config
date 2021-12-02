@@ -62,7 +62,7 @@ COMBO(volup, &kp C_VOL_UP, 7 17, NAV)
 COMBO(voldown, &kp C_VOL_DN, 17 27, NAV)
 
 /* Keyboard */
-COMBO(reset, &reset, 4 5 14 15, BASE)
+COMBO(reset, &reset, 11 12 13 17, BASE)
 COMBO(bootloader, &bootloader, 14 15 24 25, BASE)
 COMBO(bt0, &macro_bt_0, 26 27, BASE)
 COMBO(bt1, &macro_bt_1, 2 3, BASE)
