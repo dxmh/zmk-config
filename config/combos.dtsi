@@ -26,6 +26,9 @@ COMBO(right_parenthesis, &kp RIGHT_PARENTHESIS, 18 28, BASE)
 COMBO(less_than, &kp LESS_THAN, 12 22, BASE)
 COMBO(greater_than, &kp GREATER_THAN, 18 28, BASE)
 
+/* Misc */
+COMBO(caps_word, &caps_word, 31 32, BASE)
+
 /* Text processing (Mac) */
 COMBO(undo_mac, &kp LG(Z), 20 21, BASE_MAC)
 COMBO(cut_mac, &kp LG(X), 21 23, BASE_MAC)

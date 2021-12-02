@@ -62,8 +62,6 @@ zmk:
 		git clone https://github.com/zmkfirmware/zmk .; \
 		$(call _merge,okke-formsma,macros) \
 		$(call _merge,aumuell,modmorph) \
-		$(call _merge,petejohanson,behaviours/caps-word-implementation) \
-		$(call _merge,kurtis-lew,pr_tap_dance_june) \
 		west init -l app; \
 		west update'
 
