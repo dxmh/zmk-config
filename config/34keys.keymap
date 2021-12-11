@@ -55,7 +55,7 @@
       tapping_term_ms = <0>;
       retro-tap;
       flavor = "hold-preferred";
-      bindings = <&mo>, <&mm_esc>;
+      bindings = <&mo>, <&kp>;
     };
 
   };
