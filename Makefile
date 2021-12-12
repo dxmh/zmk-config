@@ -6,7 +6,7 @@ zmk_image=zmkfirmware/zmk-dev-arm:2.5
 
 define _flash
 	findmnt /dev/disk/by-id/usb-Adafruit_nRF_UF2_$(1)-0:0 \
-		&& cp -av "${uf2}/$(2).uf2" "${nicenano_mount}/" || true
+		&& cp -av "uf2/$(2).uf2" "${nicenano_mount}/" || true
 endef
 
 # Default shield to build
