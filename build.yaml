@@ -1,0 +1,9 @@
+# This file generates the GitHub Actions matrix
+---
+board:
+  - nice_nano
+shield:
+  - a_dux_left
+  - a_dux_right
+  - cradio_left
+  - cradio_right
