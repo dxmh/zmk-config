@@ -9,11 +9,6 @@ define _flash
 		&& cp -av "${uf2}/$(2).uf2" "${nicenano_mount}/" || true
 endef
 
-define _merge
-	git remote add -ft $(2) $(1) https://github.com/$(1)/zmk; \
-	git merge $(1)/$(2) --no-edit;
-endef
-
 # Default shield to build
 default: a_dux_left
 
@@ -22,8 +17,6 @@ zmk:
 	docker run -it --name zmk -h zmk.local -w /zmk -v zmk:/zmk ${zmk_image} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
 		git checkout c4ad3bc5dcfdf01f86b7538b42b7546487a694b0; \
-		$(call _merge,okke-formsma,macros) \
-		$(call _merge,aumuell,modmorph) \
 		west init -l app; \
 		west update'
 
