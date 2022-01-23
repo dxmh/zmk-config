@@ -16,7 +16,6 @@ default: a_dux_left
 zmk:
 	docker run -it --name zmk -h zmk.local -w /zmk -v zmk:/zmk ${zmk_image} sh -c '\
 		git clone https://github.com/zmkfirmware/zmk .; \
-		git checkout c4ad3bc5dcfdf01f86b7538b42b7546487a694b0; \
 		west init -l app; \
 		west update'
 
