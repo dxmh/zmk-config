@@ -4,7 +4,7 @@ This is my personal [ZMK firmware][1] configuration for my current 34-key wirele
 
 ## Keymap layout
 
-![](https://raw.githubusercontent.com/dxmh/keymap/fd6848fbf346ec0a1bb94dcd877b7269d5a4e6bd/keymap.svg)
+![](https://raw.githubusercontent.com/dxmh/keymap/dbb6cfce70e1ae07026a857b1aeaff28700b5e60/keymap.svg)
 
 Graphic produced with [@callum-oakley/keymap][2].
 
