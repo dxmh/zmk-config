@@ -34,10 +34,16 @@ COMBO(caps_word, &caps_word, 31 32, BASE)
 
 /* System */
 COMBO(power, &kp C_POWER, 4 5, BASE)
-COMBO(menu_search, &kp LG(LS(SLASH)), 27 28, BASE)
+COMBO(menu_search, &kp LG(LS(SLASH)), 16 17 18, BASE)
 COMBO(spotlight, &kp LG(SPACE), 11 12 13, BASE)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
 COMBO(mic_mute_right, &kp LG(BACKSLASH), 16 26, BASE)
+
+/* Window management */
+COMBO(tile_left, &kp LG(LC(LA(LEFT))), 26 27, BASE)
+COMBO(tile_right, &kp LG(LC(LA(LEFT))), 27 28, BASE)
+COMBO(maximize, &kp LG(LC(LA(UP))), 26 27 28, BASE)
+COMBO(center, &kp LG(LC(LA(DOWN))), 26 28, BASE)
 
 /* Media */
 COMBO(volup, &kp C_VOL_UP, 7 17, NAV)
