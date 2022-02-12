@@ -33,8 +33,8 @@
       release-after-ms = <STICKY_KEY_TIMEOUT>;
     };
 
-    // Use hold-tap to enable rolling sticky keys:
-    // https://github.com/zmkfirmware/zmk/issues/829#issuecomment-979864774
+    // Sticky key on tap, normal key on hold
+    // Useful for modifier-clicking without the modifier remaning active
     nk: not_so_sticky_key {
       compatible = "zmk,behavior-hold-tap";
       label = "NOT_SO_STICKY_KEY";
