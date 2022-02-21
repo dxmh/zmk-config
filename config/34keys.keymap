@@ -34,7 +34,7 @@
     };
 
     // Sticky key on tap, normal key on hold
-    // Useful for modifier-clicking without the modifier remaning active
+    // Useful for modifier-clicking without the modifier remaining active
     nk: not_so_sticky_key {
       compatible = "zmk,behavior-hold-tap";
       label = "NOT_SO_STICKY_KEY";
