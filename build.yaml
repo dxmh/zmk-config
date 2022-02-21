@@ -1,5 +1,7 @@
 # This file generates the GitHub Actions matrix
 ---
+
+# Board and shield matrix:
 board:
   - nice_nano
 shield:
@@ -7,3 +9,7 @@ shield:
   - a_dux_right
   - cradio_left
   - cradio_right
+
+# Additional builds outside of the above matrix:
+include:
+  - board: tipper_tf
