@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: dxmh
-      revision: jd79653
+      revision: tipper_tf
       import: app/west.yml
   self:
     path: config
