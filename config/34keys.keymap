@@ -55,15 +55,6 @@
       bindings = <&mo>, <&kp>;
     };
 
-    // Override shift + space to repeat the last keypress
-    mm_space: mm_space {
-       compatible = "zmk,behavior-mod-morph";
-       label = "mm_space";
-       #binding-cells = <0>;
-       bindings = <&kp SPACE>, <&key_repeat>;
-       mods = <(MOD_LSFT)>;
-    };
-
   };
 
   keymap {
@@ -79,7 +70,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       MO(NAV)       &skq LSHIFT       &mm_space     MO(NUM)
+                                                       MO(NAV)       &skq LSHIFT       &kp SPACE     MO(NUM)
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
