@@ -6,6 +6,7 @@
 
 &sk {
   release-after-ms = <STICKY_KEY_TIMEOUT>;
+  quick-release;
 };
 
 &caps_word {
@@ -23,15 +24,6 @@
   };
 
   behaviors {
-
-    skq: sticky_key_quick_release {
-      compatible = "zmk,behavior-sticky-key";
-      label = "STICKY_KEY_QUICK_RELEASE";
-      #binding-cells = <1>;
-      bindings = <&kp>;
-      quick-release;
-      release-after-ms = <STICKY_KEY_TIMEOUT>;
-    };
 
     // Sticky key on tap, normal key on hold
     // Useful for modifier-clicking without the modifier remaining active
@@ -70,7 +62,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
              &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SLASH
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       MO(NAV)       &skq LSHIFT       &kp SPACE     MO(NUM)
+                                                       MO(NAV)       SK(LSHIFT)        &kp SPACE     MO(NUM)
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
