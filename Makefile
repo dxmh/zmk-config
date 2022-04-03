@@ -2,7 +2,9 @@ shields=a_dux_left a_dux_right cradio_left cradio_right
 config=${PWD}/config
 nicenano_device=/dev/disk/by-label/NICENANO
 nicenano_mount=/media/${USER}/NICENANO
-zmk_image=zmkfirmware/zmk-dev-arm:2.5
+zmk_image=zmkfirmware/zmk-dev-arm:3.0-branch
+# TODO: Switch to `stable` image tag once it is arm64 compatible
+# https://hub.docker.com/r/zmkfirmware/zmk-dev-arm/tags
 
 define _flash
 	findmnt /dev/disk/by-id/usb-Adafruit_nRF_UF2_$(1)-0:0 \
