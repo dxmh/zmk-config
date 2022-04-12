@@ -17,7 +17,7 @@ default: a_dux_left
 # Install ZMK and initiate west inside a volume for use by build containers
 zmk:
 	docker run -it --name zmk -h zmk.local -w /zmk -v zmk:/zmk ${zmk_image} sh -c '\
-		git clone https://github.com/zmkfirmware/zmk .; \
+		git clone https://github.com/dxmh/zmk -b tipper_tf_zephyr30 .; \
 		west init -l app; \
 		west update'
 
@@ -30,6 +30,12 @@ combo_count:
 $(shields): combo_count
 	docker run --rm -it --name zmk-$@ -w /zmk -v zmk:/zmk -v "${config}:/zmk-config:Z" ${zmk_image} \
 		sh -c 'west build --pristine --board "nice_nano" app -- -DSHIELD="$@" -DZMK_CONFIG="/zmk-config"'
+	docker cp zmk:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
+
+# Build the firmware for Tipper TF
+tipper_tf: combo_count
+	docker run --rm -it --name zmk-$@ -w /zmk -v zmk:/zmk -v "${config}:/zmk-config:Z" ${zmk_image} \
+		sh -c 'west build --pristine --board "tipper_tf" app -- -DZMK_CONFIG="/zmk-config"'
 	docker cp zmk:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
 
 # Flash the appropriate firmware to the connected controller
