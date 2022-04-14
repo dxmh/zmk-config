@@ -5,6 +5,14 @@ nicenano_mount=/media/${USER}/NICENANO
 zmk_image=zmkfirmware/zmk-dev-arm:3.0-branch
 # TODO: Switch to `stable` image tag once it is arm64 compatible
 # https://hub.docker.com/r/zmkfirmware/zmk-dev-arm/tags
+docker_opts= \
+	--interactive \
+	--tty \
+	--name zmk-$@ \
+	--workdir /zmk \
+	--volume zmk:/zmk \
+	--volume "${config}:/zmk-config:Z" \
+	${zmk_image}
 
 define _flash
 	findmnt /dev/disk/by-id/usb-Adafruit_nRF_UF2_$(1)-0:0 \
@@ -15,10 +23,10 @@ endef
 default: a_dux_left
 
 # Install ZMK and initiate west inside a volume for use by build containers
-zmk:
-	docker run -it --name zmk -h zmk.local -w /zmk -v zmk:/zmk ${zmk_image} sh -c '\
-		git clone https://github.com/dxmh/zmk -b tipper_tf_zephyr30 .; \
-		west init -l app; \
+codebase:
+	docker run ${docker_opts} sh -c '\
+		git clone https://github.com/dxmh/zmk -b tipper_tf_zephyr30 /zmk/; \
+		west init -l /zmk/app/; \
 		west update'
 
 # Count the amount of combos per key and update the value in config files
@@ -28,15 +36,15 @@ combo_count:
 
 # Build the firmware for a given shield
 $(shields): combo_count
-	docker run --rm -it --name zmk-$@ -w /zmk -v zmk:/zmk -v "${config}:/zmk-config:Z" ${zmk_image} \
-		sh -c 'west build --pristine --board "nice_nano" app -- -DSHIELD="$@" -DZMK_CONFIG="/zmk-config"'
-	docker cp zmk:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
+	docker run --rm ${docker_opts} \
+		west build /zmk/app --pristine --board "nice_nano" -- -DSHIELD="$@" -DZMK_CONFIG="/zmk-config"
+	docker cp zmk-codebase:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
 
 # Build the firmware for Tipper TF
 tipper_tf: combo_count
-	docker run --rm -it --name zmk-$@ -w /zmk -v zmk:/zmk -v "${config}:/zmk-config:Z" ${zmk_image} \
-		sh -c 'west build --pristine --board "tipper_tf" app -- -DZMK_CONFIG="/zmk-config"'
-	docker cp zmk:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
+	docker run --rm ${docker_opts} \
+		west build /zmk/app --pristine --board "tipper_tf" -- -DZMK_CONFIG="/zmk-config"
+	docker cp zmk-codebase:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
 
 # Flash the appropriate firmware to the connected controller
 flash:
@@ -49,6 +57,6 @@ flash:
 	@ $(call _flash,45C483E59AD308DE,cradio_right)
 
 clean:
-	docker ps -aq --filter name='^zmk$$' | xargs -r docker container rm
+	docker ps -aq --filter name='^zmk' | xargs -r docker container rm
 	docker volume list -q --filter name='zmk' | xargs -r docker volume rm
 	find uf2/ -type f -delete
