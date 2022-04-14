@@ -46,6 +46,10 @@ tipper_tf: combo_count
 		west build /zmk/app --pristine --board "tipper_tf" -- -DZMK_CONFIG="/zmk-config"
 	docker cp zmk-codebase:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
 
+# Open a shell within the ZMK environment
+shell:
+	docker run --rm ${docker_opts} /bin/bash
+
 # Flash the appropriate firmware to the connected controller
 flash:
 	@ printf "\nWaiting for a nice!nano to appear\n"
