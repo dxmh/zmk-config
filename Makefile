@@ -20,7 +20,7 @@ define _flash
 endef
 
 # Default shield to build
-default: a_dux_left
+default: tipper_tf
 
 # Install ZMK and initiate west inside a volume for use by build containers
 codebase:
