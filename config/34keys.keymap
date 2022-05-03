@@ -22,6 +22,10 @@
     #include "combos.dtsi"
   };
 
+  macros {
+   #include "macros.dtsi"
+  };
+
   behaviors {
 
     skq: sticky_key_quick_release {
