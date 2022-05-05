@@ -1,7 +1,6 @@
 shields=a_dux_left a_dux_right cradio_left cradio_right
 config=${PWD}/config
-nicenano_device=/dev/disk/by-label/NICENANO
-nicenano_mount=/media/${USER}/NICENANO
+nicenano_mount=/media/psf/NICENANO
 tipper_mount=/media/psf/TIPPERTF
 zmk_image=zmkfirmware/zmk-dev-arm:3.0-branch
 # TODO: Switch to `stable` image tag once it is arm64 compatible
@@ -15,13 +14,9 @@ docker_opts= \
 	--volume "${config}:/zmk-config:Z" \
 	${zmk_image}
 
-define _flash
-	findmnt /dev/disk/by-id/usb-Adafruit_nRF_UF2_$(1)-0:0 \
-		&& cp -av "uf2/$(2).uf2" "${nicenano_mount}/" || true
-endef
-
-# Default shield to build
-default: tipper_tf
+# Default keyboard to build
+kb=tipper_tf
+default: ${kb}
 
 # Install ZMK and initiate west inside a volume for use by build containers
 codebase:
@@ -47,25 +42,22 @@ tipper_tf: combo_count
 		west build /zmk/app --pristine --board "tipper_tf" -- -DZMK_CONFIG="/zmk-config"
 	docker cp zmk-codebase:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
 
-# Build the firmware for Tipper TF
-flash_tipper_tf:
-	@ printf "Waiting for bootloader to appear.."
-	@ while [ ! -d ${tipper_mount} ]; do sleep 1; printf "."; done; printf "\n"
-	cp -av uf2/tipper_tf.uf2 ${tipper_mount}
-
 # Open a shell within the ZMK environment
 shell:
 	docker run --rm ${docker_opts} /bin/bash
 
-# Flash the appropriate firmware to the connected controller
+# Determine where to find the bootloader
+ifeq (${kb},tipper_tf)
+  mountpoint=${tipper_mount}
+else
+  mountpoint=${nicenano_mount}
+endif
+
+# Flash the appropriate firmware to the bootloader
 flash:
-	@ printf "\nWaiting for a nice!nano to appear\n"
-	@ while [ ! -b ${nicenano_device} ]; do sleep 1; printf "."; done
-	@ findmnt ${nicenano_device} || udisksctl mount --block-device ${nicenano_device}
-	@ $(call _flash,8AA1DA68593FABC1,a_dux_left)
-	@ $(call _flash,21CA6AAAD49DF81A,a_dux_right)
-	@ $(call _flash,D33E2CFB15C7D816,cradio_left)
-	@ $(call _flash,45C483E59AD308DE,cradio_right)
+	@ printf "Waiting for ${kb} bootloader to appear at ${mountpoint}.."
+	@ while [ ! -d ${mountpoint} ]; do sleep 1; printf "."; done; printf "\n"
+	cp -av uf2/${kb}.uf2 ${mountpoint}
 
 clean:
 	docker ps -aq --filter name='^zmk' | xargs -r docker container rm
