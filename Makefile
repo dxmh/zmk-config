@@ -2,6 +2,7 @@ shields=a_dux_left a_dux_right cradio_left cradio_right
 config=${PWD}/config
 nicenano_device=/dev/disk/by-label/NICENANO
 nicenano_mount=/media/${USER}/NICENANO
+tipper_mount=/media/psf/TIPPERTF
 zmk_image=zmkfirmware/zmk-dev-arm:3.0-branch
 # TODO: Switch to `stable` image tag once it is arm64 compatible
 # https://hub.docker.com/r/zmkfirmware/zmk-dev-arm/tags
@@ -45,6 +46,12 @@ tipper_tf: combo_count
 	docker run --rm ${docker_opts} \
 		west build /zmk/app --pristine --board "tipper_tf" -- -DZMK_CONFIG="/zmk-config"
 	docker cp zmk-codebase:/zmk/build/zephyr/zmk.uf2 uf2/$@.uf2
+
+# Build the firmware for Tipper TF
+flash_tipper_tf:
+	@ printf "Waiting for bootloader to appear.."
+	@ while [ ! -d ${tipper_mount} ]; do sleep 1; printf "."; done; printf "\n"
+	cp -av uf2/tipper_tf.uf2 ${tipper_mount}
 
 # Open a shell within the ZMK environment
 shell:
