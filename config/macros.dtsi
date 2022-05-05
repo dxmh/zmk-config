@@ -14,3 +14,6 @@
 MACRO(parentheses, &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT)
 MACRO(brackets, &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT)
 MACRO(ltgt, &kp LESS_THAN &kp GREATER_THAN &kp LEFT)
+
+/* Suspend macOS by holding power key for 1 second */
+MACRO(power, &macro_tap_time 1000 &kp C_POWER)

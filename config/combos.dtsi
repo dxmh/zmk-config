@@ -36,7 +36,7 @@ COMBO(select_all, &kp LG(A), 20 23, BASE)
 COMBO(caps_word, &caps_word, 31 32, BASE)
 
 /* System */
-COMBO(power, &kp C_POWER, 4 5, BASE)
+COMBO(power, &macro_power, 4 5, BASE)
 COMBO(menu_search, &kp LG(LS(SLASH)), 16 17 18, BASE)
 COMBO(spotlight, &kp LG(SPACE), 11 12 13, BASE)
 COMBO(mic_mute_left, &kp LG(BACKSLASH), 13 23, BASE)
