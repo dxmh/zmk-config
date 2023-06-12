@@ -4,6 +4,7 @@
 #define BASE 0
 #define NAV 1
 #define NUM 2
+#define FUN 3
 
 #define SK(KEY) &nk KEY KEY
 #define MO(LAYER) &mo_tap LAYER F24
